@@ -1,0 +1,164 @@
+
+\documentclass[11pt]{book}
+%\documentclass[a4paper,twoside,11pt]{article}
+%\documentclass[11pt]{article}
+
+% \documentclass[a4paper,twoside]{report}
+
+\usepackage[utf8]{inputenc}
+
+%\documentclass[11pt]{adfathesis}
+%\documentclass[11pt]{afthesis}
+%\documentclass[11pt]{ebsthesis}
+%\documentclass[11pt]{elteikthesis}
+%\documentclass[11pt]{fbithesis}
+%\documentclass[11pt]{gatech-thesis}
+%\documentclass[11pt]{hepthesis}
+%\documentclass[11pt]{kdgdocs}
+%\documentclass[11pt]{msu-thesis}
+%%\documentclass[11pt]{muthesis}
+%\documentclass[11pt]{ryethesis}
+%\documentclass[11pt]{sapthesis}
+%\documentclass[11pt]{seuthesis}
+%%\documentclass[11pt]{usthesis}
+%\documentclass[11pt]{thuthesis}
+%\documentclass[11pt]{my-thesis}
+%\documentclass[11pt]{ua-thesis}
+%\documentclass[11pt]{uafthesis}
+%\documentclass[11pt]{ucdavisthesis}
+%\documentclass[11pt]{ucthesis}
+%\documentclass[11pt]{uiucthesis}
+%\documentclass[11pt]{umich-thesis}
+%\documentclass[11pt]{umthesis}
+%\documentclass[11pt]{uothesis}
+%\documentclass[11pt]{uowthesis}
+%\documentclass[11pt]{ut-thesis}
+%\documentclass[11pt]{uwthesis}
+%\documentclass[11pt]{york-thesis}
+
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+%\usepackage{algorithmic2}
+\usepackage{verbatim}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{color,colortbl}
+\usepackage{url}
+\usepackage{array}
+\usepackage[bookmarks=true, pdftitle={Energy aware scheduling in heterogeneous computing systems}, pdfauthor={Gabriel Centurion}, colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}
+\usepackage{bookmark}
+\usepackage[english]{babel}
+%\usepackage[english,activeacute]{babel}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+%\usepackage[fleqn]{amsmath}
+\usepackage{ifthen}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage[section]{placeins}
+%\usepackage[round,sort&compress]{natbib}
+%\usepackage[round,compress]{natbib}
+%\usepackage{subfigure}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{rotating}
+\usepackage{xfrac}
+%\usepackage[titletoc]{appendix}
+\usepackage{appendix}
+\usepackage{bibentry}
+
+
+%\theoremstyle{plain}
+\theoremstyle{definition}
+\newtheorem{mydef}{Definition}
+%\definecolor{Gray}{gray}{0.9}
+
+\pagestyle{fancy}
+
+%\hoffset = -1in
+\voffset = -1in
+\topmargin = 30pt
+\textheight = 650pt
+\textwidth = 420pt
+\headwidth = 450pt
+%\marginparwidth = 0pt
+%\marginparsep = 0pt
+\oddsidemargin = 0pt
+\evensidemargin = 0pt
+
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]%
+	{\markright{\thesection\ #1}}
+\lhead[\fancyplain{}{\bfseries\thepage}]%
+	{\fancyplain{}{\bfseries\rightmark}}
+\rhead[\fancyplain{}{\bfseries\leftmark}]%
+	{\fancyplain{}{\bfseries\thepage}}
+\cfoot{}
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else%
+    \hbox{}%
+    \thispagestyle{empty}%              % Empty header styles
+    \newpage%
+    \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
+
+\hyphenation{}
+
+\begin{document}
+
+% tells bibentry to (re)use the bibliographic data from the standard BibTeX setup
+%\nobibliography*
+
+% -- title page --
+\include{0_title}
+\cleardoublepage
+
+% \begin{abstract}
+
+\input{0_abstract}
+
+% \end{abstract}
+
+\cleardoublepage
+
+% -- table of contents --
+%
+%\setcounter{tocdepth}{4}
+\tableofcontents
+% \listoffigures
+% \listoftables
+% \listofalgorithms
+\cleardoublepage
+
+
+% --- Main Document --- --- --- --- --- --- ---
+%
+\mainmatter
+\setcounter{page}{1}
+\pagenumbering{arabic}
+%
+
+\input{1_intro_0}
+\input{2_micro_0}
+\input{3_desc_0}
+\input{4_trabrel_0}
+\input{5_solprop_0}
+\input{6_analisis_0}
+\input{7_conclu_0}
+
+% -- bibliography --
+%\addcontentsline{toc}{chapter}{Bibliography}
+
+\bibliography{ref}
+\bibliographystyle{IEEEtran}
+    
+% Apéndice
+\appendix
+\include{8_apendice}
+
+
+\end{document}

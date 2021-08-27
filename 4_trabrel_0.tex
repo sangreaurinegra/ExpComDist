@@ -1,0 +1,92 @@
+\chapter{Trabajo relacionado}
+
+En este capitulo se incluye los trabajos de investigación relacionados, publicaciones, productos y libros al respecto de la utilización de Microservicios en arquitectura distribuidas para el procesamiento de grandes volúmenes de datos.
+
+
+\section{Papers}
+
+ An Experimental Study on Microservices based Edge Computing Platforms \cite{DBLP}.
+ 
+https://arxiv.org/abs/2004.02372
+Motivado por la arquitectura de microserviucios y su aplicaciona a  ciudades inteligentes
+este paper investiga multiples politicas de deploy en plataformas de computacion de borde.
+Para ello utiliza contenedores docker y a traves de pruebas experimentales e distintos escenarios, compara el desempenho de las mismas.
+Considera que la capacidead de recolectar y procesar los datos de borde es la clave.
+EL trabajp trata de respodner ;las preguntas 
+
+Is it suitable to run multiple microservices inside one
+container just considering the performance of the edge
+device? Which type of microservices with different re-
+source consuming inclination could be put together if the
+answer is yes?
+•Is the effect of interference that executes multiple mi-
+croservices running on fog computing and edge comput-
+ing scenarios different? and
+•What is the trade-off between the “one process per
+container” rule and the existing limitation of resource at
+edge side, such as computation and memory? 
+
+Argumenta porqeu la eleccion de contenedores y no VMs, haciendo referencia a estudios de IBM en cuanto aconsumo de recursos .
+ The IBM
+Research Division measured the performance of Docker in
+terms of CPU, memory, disk I/O and compared the result
+with KVM. ([7] W. Felter, A. Ferreira, R. Rajamony, and J. Rubio, “An updated perfor-
+mance comparison of virtual machines and linux containers,” in 2015
+IEEE international symposium on performance analysis of systems and
+software (ISPASS). IEEE, 2015, pp. 171–172.)
+
+Define como conveniete el utilizar un contenedor por microservicio, haciendo referencia a D. N. Jha, S. Garg, P. P. Jayaraman, R. Buyya, Z. Li, and R. Ranjan, “A
+holistic evaluation of docker containers for interfering microservices,”
+in 2018 IEEE International Conference on Services Computing (SCC).
+IEEE, 2018, pp. 33–40 .
+
+
+
+1) CPU performance: To evaluate the performance of the
+CPU, we chose the Linpack benchmarks which measure
+the system’s floating point computing power by solving
+linear equations. And the capability of the CPU is
+measured in terms of FLOPS (floating point operations
+per second).
+2) Memory performance:We chose the STREAM bench-
+marks to measure the performance of the memory.
+STREAM is a simple synthetic benchmark program that
+measures sustainable memory bandwidth (in MB/s) and
+the corresponding computation rate for simple vector
+kernels.
+3
+3) Disk performance: To measure the disk I/O capability,
+we chose the Bonnie++ benchmark which gives the
+results in terms of input, output, rewrite (in Kb/s) and
+seeks (in per second
+
+ 
+
+\section{Libros}
+
+Quarkus Cookbook Kubernetes-Optimized Java Solutions by Alex Soto, Jason Porter
+
+Microservices in Big Data Analytics
+
+https://www.springer.com/gp/book/9789811501272
+
+Este libro recolecta papers de vanguardia que exploran principios, técnicas y aplicaciones de Microservicios para el análisis de grandes volúmenes de datos.
+
+
+The ICETCE-2019 is the latest installment in a successful series of annual conferences that began in 2011. Every year since, it has significantly contributed to the research community in the form of numerous high-quality research papers. This year, the conference’s focus was on the highly relevant area of Microservices in Big Data Analytics.
+
+
+Orquestación de servicios para el desarrollo de aplicaciones para big data
+http://sedici.unlp.edu.ar/handle/10915/69999
+
+
+Diseño de un prototipo de una arquitectura basada en microservicios para la integración de aplicaciones Web altamente transaccionales. Caso: Entidades financieras.
+https://dspace.ups.edu.ec/handle/123456789/18532
+
+https://searchdatamanagement.techtarget.com/feature/Microservices-and-big-data-start-to-get-closer
+
+https://link.springer.com/article/10.1007/s11277-020-07822-0
+
+https://blog.gramener.com/enterprise-microservices-big-data-applications/
+
+\section{Productos Comerciales}
