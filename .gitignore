@@ -9,3 +9,6 @@ index.log
 index.synctex.gz
 index.pdf
 index.toc
+.vscode/ltex.hiddenFalsePositives.es.txt
+.vscode/ltex.dictionary.es.txt
+.vscode/ltex.disabledRules.es.txt
