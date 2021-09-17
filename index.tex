@@ -50,13 +50,12 @@
 \usepackage[bookmarks=true, pdftitle={Energy aware scheduling in heterogeneous computing systems}, pdfauthor={Gabriel Centurion}, colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}
 \usepackage{bookmark}
 \usepackage[spanish]{babel}
-%\usepackage[english,activeacute]{babel}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsthm}
 %\usepackage[fleqn]{amsmath}
 \usepackage{ifthen}
-\usepackage{fancyhdr}
+% \usepackage{fancyhdr}
 \usepackage{setspace}
 \usepackage[section]{placeins}
 %\usepackage[round,sort&compress]{natbib}
@@ -76,37 +75,17 @@
 \newtheorem{mydef}{Definition}
 %\definecolor{Gray}{gray}{0.9}
 
-\pagestyle{fancy}
-
 %\hoffset = -1in
 \voffset = -1in
 \topmargin = 30pt
 \textheight = 650pt
 \textwidth = 420pt
-\headwidth = 450pt
 %\marginparwidth = 0pt
 %\marginparsep = 0pt
 \oddsidemargin = 0pt
 \evensidemargin = 0pt
 
 
-\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-\renewcommand{\sectionmark}[1]%
-	{\markright{\thesection\ #1}}
-\lhead[\fancyplain{}{\bfseries\thepage}]%
-	{\fancyplain{}{\bfseries\rightmark}}
-\rhead[\fancyplain{}{\bfseries\leftmark}]%
-	{\fancyplain{}{\bfseries\thepage}}
-\cfoot{}
-\makeatletter
-\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else%
-    \hbox{}%
-    \thispagestyle{empty}%              % Empty header styles
-    \newpage%
-    \if@twocolumn\hbox{}\newpage\fi\fi\fi}
-\makeatother
-
-\hyphenation{}
 
 \begin{document}
 
@@ -149,6 +128,7 @@
 \input{5_solprop_0}
 \input{6_analisis_0}
 \input{7_conclu_0}
+
 
 % -- bibliography --
 %\addcontentsline{toc}{chapter}{Bibliography}
