@@ -1,17 +1,18 @@
 \textbf{\emph{An Experimental Study on Microservices based Edge Computing Platforms}}
 
  \cite{qu_experimental_2020}.
-
+\\
 Motivado por la arquitectura de microservicios y su aplicación en ciudades inteligentes
-múltiples políticas de despliegue en plataformas de computación de borde (EDGE) fueron investigadas por este artículo.
+múltiples políticas de despliegue en plataformas de computación de borde (EDGE) fueron investigadas por este artículo.\\
+
 Argumentando contra las máquinas virtuales, haciendo referencia a estudios de IBM en cuanto al consumo de recursos, 
-comparando ejecuciones con Spark \cite{ApacheSpark} y big data, y basándose además del estudio en el área big data sobre la interferencia causada entre contenedores vecinos ejecutando microservicios sobre big data \cite{BigDataWikipedia}.
+comparando ejecuciones con Spark \cite{ApacheSpark} y big data, y basándose además del estudio en el área big data sobre la interferencia causada entre contenedores vecinos ejecutando microservicios sobre big data \cite{BigDataWikipedia}.\\
 
-Si bien no es mecionado explicitamente la aplicacion a big data depende del escalado de los datos de entrada. La arquitectra planteada se define en contrapocicion a una arquitectura tipica de big data. Por ese motivo fue uno de los articulos seleccionados como trabajo relacionado. 
+Si bien no es mecionado explicitamente la aplicacion a big data depende del escalado de los datos de entrada. La arquitectra planteada se define en contrapocicion a una arquitectura tipica de big data. Por ese motivo fue uno de los articulos seleccionados como trabajo relacionado.\\
 
-Para la investigación fueron utilizados contenedores docker. A través de pruebas experimentales en distintos escenarios se comparó el desempeño, considerando que la capacidad de recolectar y procesar los datos de borde es la clave.
+Para la investigación fueron utilizados contenedores docker. A través de pruebas experimentales en distintos escenarios se comparó el desempeño, considerando que la capacidad de recolectar y procesar los datos de borde es la clave.\\
 Se evauó (por parte de los investigadores) si es apropiado ejecutar múltiples microservicios dentro de un contenedor considerando la performance del dispositivo.
-En caso de que fuese viable, se identifican que tipos de microservicios son agrupables en cuanto al perfil de consumo de recursos.
+En caso de que fuese viable, se identifican que tipos de microservicios son agrupables en cuanto al perfil de consumo de recursos.\\
 Fue verificado si el efecto de interferencia al ejecutar múltiples microservicios en una infraestructura de computación de la niebla (FOG), es el mismo que en EDGE. Cabe mencionar que la computación de niebla (también conocida como redes en la niebla o niebla),
 es una infraestructura de computación descentralizada. Donde las aplicaciones están distribuidos en el lugar más eficiente entre la fuente de datos y la nube.
 \cite{webfog}.
@@ -23,24 +24,27 @@ contra las limitaciones de recursos en EDGE en términos de computación y memor
 La perfomrmace de la CPU se evaluó con Linpack benchmarks 
 \cite{LINPACKBenchmarksWikipedia}, la performance de la memoria con STREAM benchmarks 
 \cite{STREAMBenchmarkAMD} 
-y la del disco con Bonnie++ benchmark \cite{BonnieWikipedia}.
+y la del disco con Bonnie++ benchmark \cite{BonnieWikipedia}.\\
 
  Como ambiente fué utilizado para FOG una máquina de escritorio 4,5 GHz Intel Core TM (4 núcleos),
  4 GB DDR3 RAM y 50G HHD, sobre Ubuntu 16.04. Y para EDGE Raspberry Pi 4, Quad Core Cortex-A72 (ARM v8) 1,5 Ghz,
- 4 GB LPDDR4 RAM y 32 GB microSD card, sobre Raspbian GNU/Linux. 
- 
- Se plantearon cuatro casos a evaluar.
- El primero, una única instancia de microservicio por contenedor y solo un contenedor ejecutándose en el host.
- El segundo, múltiples instancias de microservicios en un contenedor y solo contenedor ejecutándose en el host. 
- El tercero cada contenedor albergó una única instancia de microservicio y múltiples contenedores ejecutándose en el host.
- El cuarto cada contenedor albergó una única instancia de microservicio y múltiples contenedores ejecutaron en el host, 
- con la limitante de la utilización de cgroups para limitar el acceso al sistema durante el test.
+ 4 GB LPDDR4 RAM y 32 GB microSD card, sobre Raspbian GNU/Linux. \\
 
+ Se plantearon cuatro casos a evaluar.\\
+ \begin{itemize}
+     \item El primero, una única instancia de microservicio por contenedor y solo un contenedor ejecutándose en el host.
+     \item El segundo, múltiples instancias de microservicios en un contenedor y solo contenedor ejecutándose en el host. 
+     \item El tercero cada contenedor albergó una única instancia de microservicio y múltiples contenedores ejecutándose en el host.
+     \item El cuarto cada contenedor albergó una única instancia de microservicio y múltiples contenedores ejecutaron en el host, 
+     con la limitante de la utilización de cgroups para limitar el acceso al sistema durante el test.
+ \end{itemize}
+ 
  Con las mencionadas herramientas de benchmarks y posibles configuraciones en los casos mencionados,
  se realizaron los test decidiendo según el resultado que flujo de test seguir.
  De esa manera se realizó la evaluación de las diferentes distribuciones en FOG y en EDGE. 
  Llegando a concluir que en ambiente de computación de borde el ejecutar múltiples instancias de microservicios en un contenedor,
- tiene como ventaja una mejora en la performance en la mayoría de los casos. 
+ tiene como ventaja una mejora en la performance en la mayoría de los casos.
+
  Pero tiene como gran desventaja que al momento de escalar en contenedores se replican todos los microservicios desplegados en el contenedor, 
  y no solo los necesarios por lo que resulta contraproducente en recursos. 
  En cuanto al uso de la memoria no se verificaron diferencias significativas, 
