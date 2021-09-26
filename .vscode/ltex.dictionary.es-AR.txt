@@ -1,0 +1,9 @@
+microservicios
+preprocesados
+BDA
+SDI
+MSA
+IoTBDA
+Spark
+docker
+big

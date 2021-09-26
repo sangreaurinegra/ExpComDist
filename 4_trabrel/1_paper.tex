@@ -3,12 +3,12 @@
  \cite{qu_experimental_2020}.
 \\
 Motivado por la arquitectura de microservicios y su aplicación en ciudades inteligentes
-múltiples políticas de despliegue en plataformas de computación de borde (EDGE) fueron investigadas por este artículo.\\
+múltiples políticas de despliegue en plataformas de computación de borde (EDGE) fueron investigadas por este artículo.
 
 Argumentando contra las máquinas virtuales, haciendo referencia a estudios de IBM en cuanto al consumo de recursos, 
-comparando ejecuciones con Spark \cite{ApacheSpark} y big data, y basándose además del estudio en el área big data sobre la interferencia causada entre contenedores vecinos ejecutando microservicios sobre big data \cite{BigDataWikipedia}.\\
+comparando ejecuciones con Spark \cite{ApacheSpark} y big data, y basándose además del estudio en el área big data sobre la interferencia causada entre contenedores vecinos ejecutando microservicios sobre big data \cite{BigDataWikipedia}.
 
-Si bien no es mecionado explicitamente la aplicacion a big data depende del escalado de los datos de entrada. La arquitectra planteada se define en contrapocicion a una arquitectura tipica de big data. Por ese motivo fue uno de los articulos seleccionados como trabajo relacionado.\\
+Si bien no es mecionado explicitamente la aplicacion a big data depende del escalado de los datos de entrada. La arquitectra planteada se define en contrapocicion a una arquitectura tipica de big data. Por ese motivo fue uno de los articulos seleccionados como trabajo relacionado.
 
 Para la investigación fueron utilizados contenedores docker. A través de pruebas experimentales en distintos escenarios se comparó el desempeño, considerando que la capacidad de recolectar y procesar los datos de borde es la clave.\\
 Se evauó (por parte de los investigadores) si es apropiado ejecutar múltiples microservicios dentro de un contenedor considerando la performance del dispositivo.
@@ -19,18 +19,18 @@ es una infraestructura de computación descentralizada. Donde las aplicaciones e
 \\
 La distribución de microservicios fue comparada tomando en cuenta la regla de un proceso por contenedor (o un contenedor por servicio) 
 \cite{cont_por_serv} 
-contra las limitaciones de recursos en EDGE en términos de computación y memoria. 
+contra las limitaciones de recursos en EDGE en términos de computación y memoria.
 
 La perfomrmace de la CPU se evaluó con Linpack benchmarks 
 \cite{LINPACKBenchmarksWikipedia}, la performance de la memoria con STREAM benchmarks 
 \cite{STREAMBenchmarkAMD} 
-y la del disco con Bonnie++ benchmark \cite{BonnieWikipedia}.\\
+y la del disco con Bonnie++ benchmark \cite{BonnieWikipedia}.
 
  Como ambiente fué utilizado para FOG una máquina de escritorio 4,5 GHz Intel Core TM (4 núcleos),
  4 GB DDR3 RAM y 50G HHD, sobre Ubuntu 16.04. Y para EDGE Raspberry Pi 4, Quad Core Cortex-A72 (ARM v8) 1,5 Ghz,
- 4 GB LPDDR4 RAM y 32 GB microSD card, sobre Raspbian GNU/Linux. \\
+ 4 GB LPDDR4 RAM y 32 GB microSD card, sobre Raspbian GNU/Linux. 
 
- Se plantearon cuatro casos a evaluar.\\
+ Se plantearon cuatro casos a evaluar.
  \begin{itemize}
      \item El primero, una única instancia de microservicio por contenedor y solo un contenedor ejecutándose en el host.
      \item El segundo, múltiples instancias de microservicios en un contenedor y solo contenedor ejecutándose en el host. 

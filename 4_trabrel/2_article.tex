@@ -1,14 +1,27 @@
 
 \textbf{
     \emph{ Microservice-Oriented Platform for Internet of Big Data Analytics: A Proof of Concept }
-    } \cite{li_microservice-oriented_2019} 
- 
+} \cite{li_microservice-oriented_2019}
+
 El artículo se basó en que los dispositivos de internet de las cosas (su sigla en inglés IoT) generan numerosos datos desde cualquier lugar y en cualquier momento.
 
- Se plantea demostrar que no siempre es necesario centralizar y analizar los datos acumulados como plantea las implementaciones tradicionales de análisis de grandes volúmenes de datos (su sigla en inglés BDA).
+Se planteó demostrar que no siempre es necesario centralizar y analizar los datos acumulados como plantea las implementaciones tradicionales de análisis de grandes volúmenes de datos (su sigla en inglés BDA). Para identificar el concepto planteado de BDA implementado sobre IoT se definió en el artículo la sigla IoTBDA.
 
-Se identifica que innecesariamente son trasmitidos grandes volúmenes de datos hacia el sistema centralizado, pudiendo trasmitir los datos preprocesados, reduciendo así el costo de trasmisión de los mismos. 
+Se identificó que innecesariamente son trasmitidos grandes volúmenes de datos hacia el sistema centralizado, pudiendo trasmitir los datos preprocesados, reduciendo así el costo de trasmisión de los mismos. 
 Inspirados en la infraestructura definida por el software (su sigla en inglés SDI), se plantea una plataforma orientada a microservicios para partir la concepción monolítica de BDA y crear así componentes desacoplados y reutilizables.
 
-Los recursos fisicos para la infrastructura fueron definidos en la medida que han sido tratados los mecanismos de soporte intermedio como capas entre los trabajos en tiempo de ejecucion y la infraestructura de los mismos.
-Fue indicado que  de acuerdo a las especificaciones functionales de las plataformas BDA, generalmente se combina el procesameinto de datos en conjunto con la gestion de los recursos informaticos. Incluso el almacenamiento de los datos en ocaciones son parte de la plataforma, dando lugar a un sistema que requiere un esfuerzo significane en cuento a configuracion y manipulacion. 
+Los recursos físicos para la infraestructura fueron definidos en la medida que han sido tratados los mecanismos de soporte intermedio como capas, entre los trabajos en tiempo de ejecución y la infraestructura de los mismos.
+Fue indicado que  de acuerdo a las especificaciones funcionales de las plataformas BDA, generalmente se combina el procesamiento de datos en conjunto con la gestión de los recursos informáticos. Incluso el almacenamiento de los datos en ocasiones son parte de la plataforma, dando lugar a un sistema que requiere un esfuerzo significante en cuanto a configuración y manipulación.
+
+En cuanto a la arquitectura basada en microservicios (su sigla en inglés MSA) fueron destacadas varias cualidades aplicadas a IoBDA. Entre ellas la posibilidad de descomponer sistemas monolíticos en múltiples sistemas de menor escala perdiendo acoplamiento y ganando independencia al desplegar, como así la utilización de métodos de comunicación livianos entre ellos. También se brinda la posibilidad de dado problemas particulares no solo desarrollar microservicios para ese problema, sino que realizar microservicios reutilizables creándolos funcionalmente genéricos, que queden como componentes de lógica prediseñados de otras soluciones, o como plantillas de microservicios. Se menciona que la practica las plataformas orientadas a MSA pueden ser orquestadas por microservicios un conjunto de microservicios estándar o plantillas de estos. Este unto en particular es de interés para la realización del proyecto, puesto que es considerada la orquestación como uno de los temas esenciales  a  la hora de diseñar una MSA. 
+
+Los sensores que se mencionan como componentes  de borde de la IoTBDA no poseen una forma estándar de comunicación entre ello ni con los servidores, existiendo incompatibilidades entre ellos y protocolos propietarios para asegurarse un mercado en contra de sus competidores. Exponiendo las diferentes tareas de procesamiento por microservicios a través de  interfaces en una API con un lenguaje unificado, que evitaría esos inconvenientes permitiendo que no se vea comprometida la heterogeneidad de los sensores de borde.
+
+Se apreció que la tecnología de contenedores que además de estar  en una etapa creciente, tiene soporte para múltiples dispositivos de borde.
+
+
+ Se realizaron diseños de MSA implantando IoTBDA. En un primer caso se planteó como arquitectura un conjunto de sensores a través de una instancia de observador, contra un único procesador central. 
+ 
+ PÁGINA 5 de 16
+
+
