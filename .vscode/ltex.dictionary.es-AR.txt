@@ -7,3 +7,11 @@ IoTBDA
 Spark
 docker
 big
+Montecarlo
+templates
+Splitter
+aggregator
+splitter
+observation
+map
+observers
