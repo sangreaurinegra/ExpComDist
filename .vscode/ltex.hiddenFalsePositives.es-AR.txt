@@ -1,0 +1,2 @@
+{"rule":"MORFOLOGIK_RULE_ES","sentence":"^\\QMicroservice-Oriented Platform for Internet of Big Data Analytics:\\E$"}
+{"rule":"MORFOLOGIK_RULE_ES","sentence":"^\\QA Proof of Concept \\E(?:Dummy|Ina|Jimmy-)[0-9]+$"}
