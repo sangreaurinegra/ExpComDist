@@ -15,3 +15,15 @@ splitter
 observation
 map
 observers
+paper
+smart
+cloud
+papers
+computing
+cities
+paralelizar
+microservicio
+overhead
+clusters
+cluster
+coreografiados
