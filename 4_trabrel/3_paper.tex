@@ -2,10 +2,9 @@
 \paragraph{
     \textbf{\emph{Orquestación de servicios para el desarrollo de aplicaciones para big data}}
     \cite{orquestacion}.
-    }
+ }
 
-Uno de los temas importantes cuando se habla de micro servicios es la orquestación de los mismos. Y para ello se seleccionó este paper  que se llama Orquestación de servicios para el desarrollo de aplicaciones para Big Data. 
-
+Uno de los temas importantes cuando se habla de micro servicios es la orquestación de los mismos. Y para ello se seleccionó este paper. 
 
 Fueron introducidos los conceptos de microservicios aclarando que los mismos permiten replicar y distribuir logrando así altos niveles de escalabilidad se planteó la orquestación de contenedores sobre una arquitectura distribuida virtualizada. 
 
@@ -28,37 +27,57 @@ Cada micro servicio no conoce lo que está ejecutando el otro microservicio por 
 Es decir una entidad o un conjunto de entidades que pueda manejar la lógica que atraviesa todos los microservicios para identificar que se está ejecutando, en qué momento y que se debe ejecutar a continuación.
 Que permita conocer el estado del sistema, poder consultar el mismo, acceder a estadísticas entre otros. 
 
+
 Para desarrollar esta arquitectura de microservicios se utilizaron contenedores, de tal manera que cada microservicio se ejecuta en un contenedor el cual contiene todas sus dependencias.
 
 A través de estos contenedores dado que los mismos son livianos y portables, además de que son independientes al hardware y al software en donde se crearon, es que se puede armar una arquitectura distribuida con ellos. 
 
 Los contenedores generan una baja sobrecarga e introducen menos overhead que las máquinas virtuales convencionales. 
 
+
 Se aclaró la diferencia entre la máquina virtual y el contenedor explicitando que ambos son sistemas autocontenidos que tienen como principal diferencia que una máquina virtual necesita contener todo el sistema operativo mientras que un contenedor aprovecha el sistema operativo en el cual se ejecuta. 
+
 
 Fue indicado que una de las formas de escalar horizontalmente es mediante el uso de múltiples nodos y que para lograrlo es necesario abstraerse de la complejidad de la plataforma, y esto es posible mediante el uso de clusters de contenedores.
 
-Donde cada nodo en el cluster es un servidor virtual y puede tener múltiples contenedores con una semántica común, por lo que una aplicación puede estar formada por un grupo de estos contenedores, lo cual le permite escalar a través de múltiples nodos. 
+
+Donde cada nodo en el cluster es un servidor virtual y puede tener múltiples contenedores con una semántica común,
+por lo que una aplicación puede estar formada por un grupo de estos contenedores, lo cual le permite escalar a través de múltiples nodos. 
+ 
 
 Para trabajar de esta manera se necesita administrar y coordinar esos contenedores. 
-Para ello es posible realizar dos tipos administración u organización, en donde se señalaron como opciones, la orquestación y la coreografía. 
+Y para ello es posible realizar dos tipos administración u organización, en donde se señalaron como opciones, la orquestación y la coreografía. 
 
-Fueron comparados los conceptos de orquestación y coreografía de servicios. Se indicó que orquestación (como ya se mencionó) implica que hay una entidad central que conoce todo el funcionamiento del sistema, y conoce todas las ejecuciones que están realizando todos los servicios. Mientras que los servicios coreografiados conocen exactamente cuando ejecutar sus operaciones y con quien debe interactuar, lo cual les quita independencia y es va en contra del paradigma de microservicios. 
+Fueron comparados los conceptos de orquestación y coreografía de servicios. Se indicó que orquestación (como ya se mencionó) implica que hay una entidad central que conoce todo el funcionamiento del sistema, y conoce todas las ejecuciones que están realizando todos los servicios. Mientras que los servicios coreografiados conocen exactamente cuando ejecutar sus operaciones y con quien debe interactuar, lo cual les quita independencia y es va en contra del paradigma de microservicios.
 
-Solamente la entidad central es la encargada de la orquestación y conoce cuál es la meta a conseguir por lo cual la orquestación se realiza mediante definiciones explícitas de las operaciones y el orden de invocación. 
+
+Solamente la entidad central es la encargada de la orquestación y conoce cuál es la meta a conseguir por lo cual la orquestación se realiza mediante definiciones explícitas de las operaciones y el orden de invocación.
+
+
+Se resumió el concepto de orquestador de contenedores, como una herramienta que permite crear un cluster de alta
+disponibilidad de virtualización de contenedores, dotándolo de un sistema orquestación dinámica de servicios en el ámbito de múltiples servidores.
+
+Se mencionaron una serie de productos los cuales permiten realizar la orquestación de contenedores.
+Cómo ser Kubernetes, Marathon Mesos \cite{matathonMesos}, Conductor\cite{conductor}y Docker Swarm\cite{dockerSwarm}. 
+Como tecnología de contenerización se decidió trabajar con Docker para implementar la orquestación se eligió  Docker Swarm. 
  
  
- Se resumió el concepto de orquestador de contenedores, como una herramienta que permite crear un cluster de alta disponibilidad de virtualización de contenedores, dotándolo de un sistema orquestación dinámica de servicios en el ámbito de múltiples servidores.
+El orquestador posee una arquitectura maestro esclavo. Cabe destacar que no es una típica arquitectura maestro esclavo. En este caso las entidades no son únicas, sino que el maestro es un nodo con un conjunto de contenedores, por lo cual frente a la caída de un contenedor se levanta otro y se sigue ejecutando obteniendo así alta disponibilidad de maestros.
+En cada esclavo funciona un agente que recibe las tareas y entrega al nodo maestro los informes con el avance. 
+Para el caso estudio se optó como forma de acceder rápidamente a los datos, replicar los mismos. 
+Esto es según síndico una solución en la cual se puede lograr balanceo de carga, procesamiento concurrente y paralelización. 
 
- Se mencionaron una serie de productos los cuales permiten realizar la orquestación de contenedores. 
- 
 
-//TODO  08:11,67 de la grabacion 
+Para el caso de estudio, se creó mediante la configuración del cluster Swarm, una estructura formada por un maestro (manager) y cuatro esclavos (workers). 
+Con dicha configuración se acceden a las réplicas a través de un frontend web.
 
- Cómo jugar Nets maratón mesos conductor y Tucker Swarm como tecnología de contenido estación se decidió trabajar con doctor para implementar la orquestación se decidió trabajar con dos KRS-One. 
- 
- 
- El orquestador o sea una arquitectura maestro esclavo que me destacar que no es una típica arquitectura maestro esclavo sino que en este caso el maestro es un nuevo y éste tiene un conjunto de contenedores por lo cual frente a la caída de un contenedor se levanta otro y si si ejecutando con una alta disponibilidad de maestros.
-  En todo esclavo funciona la gente que recibe las tareas y entre el nuevo maestro nos informes con el avance para el caso estudian siento como forma de acceder rápidamente los datos utilizar la replicación de los mismos porque según síndico. 
-  
-  Es una solución en la cual se puede lograr balanceo de carga procesamiento concurrente y paralización para el caso de estudio sí creo. Mediante la configuración del cluster Swarm con un manager y cuatro Work eres o sea con un. Maestro y cuatro esclavos con esa configuración sexenal a réplicas a través de un frontera web mencionó tocar compuso como una herramienta que nos permite armar una aplicación con tanto componentes como sean necesarios para posteriormente externa lo mismo en el cluster. Se concluyó que trabajar en el desarrollo de aplicaciones de Vic data como se describió el trabajo permite lograr estaba en habilidad venir antes de las réplicas de la aplicación lo cual es fundamental cuando se trabaja con aplicaciones. Usa demanda es en restricciones de tiempo pues estoy escalamiento. Se puede aumentar o disminuir de forma elástica mediante la orquestación se menciona que el uso de contenedores permite la interoperabilidad entre todos los micros servicios así como la independencia de las tecnologías internas de cada micro servicio no se está de acuerdo con ese concepto porque se puede tener interoperabilidad entre los micros servicios sin estar dentro de contenedores. Y la independencia de tecnologías internos de cada micro servicio la determina en arquitectura de micros avísame por si puesto que son entidades que solamente deben exponer servicios a través de App Store y para ello los mismos pueden ser implementados en diferentes lenguajes sobre diferentes plataformas sobre diferentes sistemas operativos
+Se mencionó Docker Compose\cite{dockerCompose} como una herramienta que permite armar una aplicación con tantos componentes como sean necesarios, para posteriormente orquestar la misma en el cluster. 
+
+
+Como conclusión se planteó que trabajar en el desarrollo de aplicaciones de big data permite lograr escalabilidad mediante réplicas de la aplicación, lo cual es fundamental cuando se trabaja con sistemas que demandan restricciones de tiempo. 
+Ese escalamiento puede aumentar o disminuir de forma elástica como consecuencia de la orquestación de sistema. 
+
+
+Se mencionó que el uso de contenedores permite la interoperabilidad entre todos los microservicios así como la independencia de las tecnologías internas de cada microservicio, 
+
+No se está de acuerdo con ese concepto, porque se puede tener interoperabilidad entre los microservicios sin estar dentro de contenedores, y la independencia de tecnologías internas de cada micro servicio la determina la arquitectura de microservicios de por sí. Y como son aplicaciones que solamente deben exponer servicios a través de HTTP, los mismos pueden ser implementados en diferentes lenguajes, sobre diferentes plataformas y sobre diferentes sistemas operativos.
