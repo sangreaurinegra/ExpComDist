@@ -48,14 +48,11 @@ por lo que una aplicación puede estar formada por un grupo de estos contenedore
 Para trabajar de esta manera se necesita administrar y coordinar esos contenedores. 
 Y para ello es posible realizar dos tipos administración u organización, en donde se señalaron como opciones, la orquestación y la coreografía. 
 
-Fueron comparados los conceptos de orquestación y coreografía de servicios. Se indicó que orquestación (como ya se mencionó) implica que hay una entidad central que conoce todo el funcionamiento del sistema, y conoce todas las ejecuciones que están realizando todos los servicios. Mientras que los servicios coreografiados conocen exactamente cuando ejecutar sus operaciones y con quien debe interactuar, lo cual les quita independencia y es va en contra del paradigma de microservicios.
+Fueron comparados los conceptos de orquestación y coreografía de servicios. Se indicó que orquestación (como ya se mencionó) implica que hay una entidad central que conoce todo el funcionamiento del sistema, y conoce todas las ejecuciones que están realizando todos los servicios. 
+Mientras que los servicios coreografiados conocen exactamente cuando ejecutar sus operaciones y con quien debe interactuar, lo cual les quita independencia y es va en contra del paradigma de microservicios.
 
 
 Solamente la entidad central es la encargada de la orquestación y conoce cuál es la meta a conseguir por lo cual la orquestación se realiza mediante definiciones explícitas de las operaciones y el orden de invocación.
-
-
-Se resumió el concepto de orquestador de contenedores, como una herramienta que permite crear un cluster de alta
-disponibilidad de virtualización de contenedores, dotándolo de un sistema orquestación dinámica de servicios en el ámbito de múltiples servidores.
 
 Se mencionaron una serie de productos los cuales permiten realizar la orquestación de contenedores.
 Cómo ser Kubernetes, Marathon Mesos \cite{matathonMesos}, Conductor\cite{conductor}y Docker Swarm\cite{dockerSwarm}. 
@@ -76,8 +73,6 @@ Se mencionó Docker Compose\cite{dockerCompose} como una herramienta que permite
 
 Como conclusión se planteó que trabajar en el desarrollo de aplicaciones de big data permite lograr escalabilidad mediante réplicas de la aplicación, lo cual es fundamental cuando se trabaja con sistemas que demandan restricciones de tiempo. 
 Ese escalamiento puede aumentar o disminuir de forma elástica como consecuencia de la orquestación de sistema. 
-
-
-Se mencionó que el uso de contenedores permite la interoperabilidad entre todos los microservicios así como la independencia de las tecnologías internas de cada microservicio, 
+Se mencionó que el uso de contenedores permite la interoperabilidad entre todos los microservicios así como la independencia de las tecnologías internas de cada microservicio.
 
 No se está de acuerdo con ese concepto, porque se puede tener interoperabilidad entre los microservicios sin estar dentro de contenedores, y la independencia de tecnologías internas de cada micro servicio la determina la arquitectura de microservicios de por sí. Y como son aplicaciones que solamente deben exponer servicios a través de HTTP, los mismos pueden ser implementados en diferentes lenguajes, sobre diferentes plataformas y sobre diferentes sistemas operativos.
