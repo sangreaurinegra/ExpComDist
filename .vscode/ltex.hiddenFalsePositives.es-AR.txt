@@ -1,2 +1,8 @@
 {"rule":"MORFOLOGIK_RULE_ES","sentence":"^\\QMicroservice-Oriented Platform for Internet of Big Data Analytics:\\E$"}
 {"rule":"MORFOLOGIK_RULE_ES","sentence":"^\\QA Proof of Concept \\E(?:Dummy|Ina|Jimmy-)[0-9]+$"}
+{"rule":"SPANISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QWizard de Test.\\E$"}
+{"rule":"SPANISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QWizard de Actualización\\E$"}
+{"rule":"SPANISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QWizard de Test, Wizard de Actualización,\\E$"}
+{"rule":"SPANISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QWizard de Test, automatiza el testing de los paquetes desplegados, y la interaccion de los agentes con los microservicios.\\E$"}
+{"rule":"SPANISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QWizard de Test, automatiza el testeo de los paquetes desplegados, y la interacción de los agentes con los microservicios.\\E$"}
+{"rule":"SPANISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QWizard de Actualización, automatiza la actualización de agentes y microservicios desde repositorios externos y locales.\\E$"}
