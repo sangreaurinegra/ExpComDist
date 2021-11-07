@@ -6,3 +6,4 @@
 {"rule":"SPANISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QWizard de Test, automatiza el testing de los paquetes desplegados, y la interaccion de los agentes con los microservicios.\\E$"}
 {"rule":"SPANISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QWizard de Test, automatiza el testeo de los paquetes desplegados, y la interacción de los agentes con los microservicios.\\E$"}
 {"rule":"SPANISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QWizard de Actualización, automatiza la actualización de agentes y microservicios desde repositorios externos y locales.\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\Q.\\E$"}

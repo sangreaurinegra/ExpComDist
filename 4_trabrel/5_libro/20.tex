@@ -1,0 +1,61 @@
+\paragraph{
+    \textbf{\emph{An Efficient and Adaptive Method for Collision
+    Probability of Ships, Icebergs Using CNN
+    and DBSCAN Clustering Algorithm}
+    }
+    \cite[pág. 20]{somani_emerging_2019}.
+}
+
+Los autores crearon un modelo para predecir las colisiones entre barcos e icebergs, 
+tomadno en cuenta la ubicación y velocidad del barco, y la cantidad de icebergs en la zona.
+PAra calcular la porbabilidad de que un barco colisione con un iceberg 
+se utilizó el teorema de Bayes de probabilidad condicionada.
+
+In this proposed work, an adaptive method is used to detect the presence of icebergs and the velocity of ships, followed by integrating the obtained data and
+applying the Bayesian algorithm we have successfully computed the collision
+probability. This work exhibits effective results against reduced visibility due to
+fog. Besides, we have acquired all the foreground authentic data from valid
+resources. So, the results will help in marking the safe and unsafe zones in the
+form of clusters by using DBSCAN algorithm
+
+
+n this work, a new structure of detection, prediction and cluster formation is
+proposed in which CNN technique is utilized along with Bayesian algorithm. CNN is
+basically used to train datasets to predict whether the targeted image contains iceberg or
+not. Thereafter, using those resulting attributes as inputs for Bayesian algorithm we
+computed the collision probability for ships and icebergs, and lastly depending upon
+the computed results we can indicate them as a safe flag or an unsafe flag
+
+Image Classification Using CNN
+Convolution neural network model works precisely on the application where image
+classification is to be used. The process is simple. By passing various test images on
+which the AI can train itself to the prediction accuracy which depends exponentially on
+number of iterations in training the model
+
+
+Bayesian Framework Inference to Predict Probability of Collision
+his work uses Bayes theorem to find the collision probability of ships in iceberg prone
+areas, provided that the event has already fulfilled the condition of iceberg presence and
+threshold velocity
+
+
+DBSCAN Clustering
+We have used clustering for pointing out the safe zones in the form of clusters. The first
+stage being formation of clusters with counter value or conditional value, where the
+attributes are supplied to Bayesian theorem
+The names are C1, C2, C3 for respectively
+speed of ship, location of ship and accuracy of presence of iceberg supplied from CNN
+image classifier
+
+
+
+Step1. Input the Satellite image of glacial area [11].
+Step2. Using Trained CNN Model, it will predict the probability P1 of the presence
+of icebergs in specified image.
+Step3. Extract the data of ships like coordinates and velocity [5].
+Step4. Set Threshold value of ships [10] and icebergs for P1 probability, coordinates and velocity.
+Step5. Using Bayesian algorithm, probability of collision P2 is predicted.
+Step6. Applying DBSCAN algorithm on P2 to form clusters of different
+probabilities.
+Step7. Marking the clusters in two categories i.e., Safe and Unsafe
+

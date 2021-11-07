@@ -1,3 +1,7 @@
 {
-    "ltex.additionalRules.motherTongue": "es"
+    "ltex.additionalRules.motherTongue": "es",
+    "cSpell.language": "es",
+    "cSpell.words": [
+        "aproximación"
+    ]
 }
