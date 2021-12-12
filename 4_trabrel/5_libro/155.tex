@@ -1,0 +1,68 @@
+\paragraph{
+    \textbf{\emph{The Survival Analysis of Big Data Application
+    Over Auto-scaling Cloud Environment}
+    }
+    \cite[pág. 155]{somani_emerging_2019}.
+}
+
+
+La carga de los centros de datos que le dan soporte a la nube fluctúa en el tiempo.
+Para escalar se asignan recursos como memoria y cpu´s. 
+Los autores destacan que el auto escalamiento es uno de los atributos esencial en la arquitectura de la nube, asignado o quitando automáticamente recursos informáticos dependiendo de la carga.
+La arquitectura en la nube es apropiada para las aplicaciones Big Data al estar asociadas a grandes volúmenes de datos y alto consumo de procesamiento.
+El presente artículo se planteó estimar la probabilidad de supervivencia
+en un entorno de una nube con escalamiento automático en el contexto de Big Data.
+
+Se introdujeron los conceptos de Cloud Computing, Big data y auto escalamiento horizontal y vertical en un entorno Cloud.
+
+Presentaron dos arquitecturas de escalado automático como la que utiliza DNS para hacer un roud robin sobre balanceadores que ejecutan sobre arreglos de servicios y la arquitectura para auto escalar utilizada por AWS.
+
+Haciendo referencia a Lorido-Botran es descrito el término de carga de trabajo, 
+como la secuencia de peticiones de usuario marcadas con el tiempo de llegada. Y agregando otras características según Abawajy como ser tasa de llegada, tiempo de ejecución, uso de memoria, operaciones de entrada de salida, comunicación y cantidad de procesos (VMs) requeridos. Se categorizó la carga de trabajo en estática y dinámica, donde la estática 
+es la carga de trabajo que es asignada una vez y la dinámica es la asignada en todo el proceso de ejecución. 
+Además basándose en la plataforma donde se ejecuta la carga se categorizaron dos grupos más de carga de trabajo, como ser los centrados en los servidores (websites, computación científica, aplicaciones empresariales entre otras) y los que están centrados en el cliente (computación gráfica, aplicaciones móviles, procesadores de texto entre otras). 
+
+En cuanto a la confiabilidad de un sistema en la nube el artículo se basó en la definición de confiabilidad de un sistema según el IEEE. Que describe la ingeniería confiable como una disciplina de la ingeniería de diseño que implementa la experiencia científica, para asegurar que el sistema proporcionará la función asignada en la duración requerida en un entorno dado. Incluyendo además la capacidad de testear y dar respaldo al sistema durante todo el ciclo de vida. Se agregó que para el software la confiabilidad se representa como la probabilidad de que una operación este libre de fallas para u periodo de tiempo particular y en una situación especifica.
+DE esta manera introdujeron el concepto de probabilidad de supervivencia como la probabilidad de que el sistema no falle en el intervalo (0,t]  como implementación en la nube. Al ser demandado el sistema en la nueva todo el tiempo se describe la probabilidad de que el componente i sobreviva como Ri(t) en el tiempo t.
+
+Ri(t) = \int_{0}^{b} x dx
+
+
+2 Methodology
+2.1 Analytical Model
+The exponential distribution, a particular case of the Weibull distribution family, is the
+most widely used distribution in reliability and survival studies. In the study of
+continuous-time stochastic processes, the exponential distribution is usually used to
+model then the time until something happen in the process. The exponential model can
+be used as the primary form of the reliability growth model of software. In this study,
+we will refer to applications related with big data, VM’s, kernel, data storages, and
+hypervisor as software application as they all follow an exponential distribution time
+till failure distributio
+
+
+
+Simulation
+A simulation program is developed using Scilab 6 mathematical software. Data generated by this program can be helpful in the investigation of the model. In the current
+study, we assume the failure rate of all resources is the same
+
+
+declara las ecuaciones de Birnbaum’s para cada componente y las ecuaciones de probabilidad de fallas .
+
+After critical examination of results, the following points are discovered for cloud
+resources in the context of big data applications.
+• The failure rate of cloud resources increases then the survival probability of system
+or cloud environment decrease. When the system time increase then the survival
+probability of system or cloud environment also decreases. An increasing number of
+scaling units then increases survival probability. The changes follow an exponential
+decreasing pattern.
+• The failure rate of cloud resources increases then the failure rate of a system or
+cloud environment increase. An increasing number of scaling units decreases failure
+rate. The system time increase then the failure rate of a system or cloud environment
+also increases. Changes follow an exponentially increasing pattern,
+• When the failure rate of cloud resources increases, then the MTTF of a cloud system
+or cloud environment decreases. The increasing number of scaling units then
+increases MTTF. The pattern of changes is an exponential pattern, changes of
+MTTF of the system divided into two sections, first MTTF quickly decreases and
+the second section decreases slowly.
+• We also concluded that the parallel components are more reliable compared to
+series based on Birnbaum’s measures
