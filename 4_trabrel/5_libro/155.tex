@@ -27,42 +27,25 @@ DE esta manera introdujeron el concepto de probabilidad de supervivencia como la
 
 %Ri(t) = \int_{0}^{b} x dx
 
+Como modelo analítico se utilizó la distribución exponencial en su caso particular de las familias de distribuciones Weibul, indicando que es la distribución más utilizada para el análisis de fiabilidad y supervivencia. En el estudio de los procesos estocásticos continuos la distribución exponencial se utiliza para modelar cunado algo sucede durante el proceso. En este caso el suceso que se estudia es una falla en el sistema pudiendo deberse esta a cualquier falla de cualquier componente del mismo ya sean máquinas virtuales, almacenamiento de datos, kernel, hypervisor entre otros.
+Se desarrolló un programa en Scilab 6 para generar datos que fueron útiles para la investigación del modelo, asumiendo que la probabilidad de falla es la misma para todo componente del sistema.
 
-2 Methodology
-2.1 Analytical Model
-The exponential distribution, a particular case of the Weibull distribution family, is the
-most widely used distribution in reliability and survival studies. In the study of
-continuous-time stochastic processes, the exponential distribution is usually used to
-model then the time until something happen in the process. The exponential model can
-be used as the primary form of the reliability growth model of software. In this study,
-we will refer to applications related with big data, VM’s, kernel, data storages, and
-hypervisor as software application as they all follow an exponential distribution time
-till failure distributio
+Realizando als declaraciones de las ecuaciones de Birnbaum’s para cada componente y las ecuaciones de probabilidad de fallas. Examinados los resultados se plantearon las siguientes conclusiones. 
 
+\begin{itemize}
 
+\item La probabilidad de falla de un recurso de la nube aumenta cuando la probabilidad de supervivencia del sistema en la nube decrece.
+Cuando el tiempo del sistema aumento la probabilidad de supervivencia del sistema en la nube disminuye,
+A mayor número de unidades de escalamiento mayor probabilidad de supervivencia. Los cambios siguen el patrón decreciente de una  distribución exponencial.
 
-Simulation
-%A simulation program is developed using Scilab 6 mathematical software. Data generated by this program can be helpful in the investigation of the model. In the current
-study, we assume the failure rate of all resources is the same
+\item Al aumentar la cantidad de fallas de los recursos de la nube también aumenta la cantidad de fallas del sistema. Al aumentar la cantidad de unidades de escalamiento disminuye la cantidad de fallas. 
+Cuanto más demore el sistema en procesar, más serán las fallas del sistema en un entorno cloud.
+Los cambios siguen un patrón creciente de la función exponencial.
 
+\item Cuando la cantidad de fallas del cloud aumenta, el tiempo medio para fallar disminuye.
+A más unidades de escalamiento mayor es el tiempo medio para fallar.
+El patrón de los cambios del tiempo medio para fallar  es exponencial dividido en dos secciones, la primera desciende rápidamente y la segunda decrece lentamente.
 
-declara las ecuaciones de Birnbaum’s para cada componente y las ecuaciones de probabilidad de fallas .
+\item  Los componentes paralelos son las confiables que las series basadas en las medidas de Birnbaum.
 
-After critical examination of results, the following points are discovered for cloud
-resources in the context of big data applications.
-• The failure rate of cloud resources increases then the survival probability of system
-or cloud environment decrease. When the system time increase then the survival
-probability of system or cloud environment also decreases. An increasing number of
-scaling units then increases survival probability. The changes follow an exponential
-decreasing pattern.
-• The failure rate of cloud resources increases then the failure rate of a system or
-cloud environment increase. An increasing number of scaling units decreases failure
-rate. The system time increase then the failure rate of a system or cloud environment
-also increases. Changes follow an exponentially increasing pattern,
-• When the failure rate of cloud resources increases, then the MTTF of a cloud system
-or cloud environment decreases. The increasing number of scaling units then
-increases MTTF. The pattern of changes is an exponential pattern, changes of
-MTTF of the system divided into two sections, first MTTF quickly decreases and
-the second section decreases slowly.
-• We also concluded that the parallel components are more reliable compared to
-series based on Birnbaum’s measures
+\end{itemize}
