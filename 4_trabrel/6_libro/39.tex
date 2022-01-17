@@ -5,3 +5,26 @@
     }
     \cite[pág. 39]{chaudhary_microservices_2020}.
 }
+
+En el artículo fue presentada una aproximación a un sistema que identifica movimientos sospechosos en zonas sensibles como ser cerca de cajeros ATM para alertar a la policía cercana para evitar tanto robos como perdidas humanas. 
+Utilizando cámaras desde diferentes ángulos lograron un flujo denso de imágenes a procesar, donde además de determinar si el comportamiento puede determinar una situación de peligro también realiza un reconocimiento facial de expresiones. 
+
+Los autores utilizaron una red neuronal de convolución para machear sentencias del lenguaje natural con  
+características pre entrenadas sobre reconocimiento de objetos y estimación de posicionamiento.
+La metodología para abordar el problema fue dividida en 5 partes 
+
+\begin{itemize}
+    \item La detección del movimiento utilizando óptica fluida. 
+    \item El pasaje de esas capturas a la capa de convolución. 
+    \item La reducción de resolución de las capturas utilizando la capa de pooling. 
+    \item Pasaje de las capturas a capas totalmente conectadas.
+    \item Clasificación en clases. 
+\end{itemize}
+
+Utilizado Python y OpenCV entrenaron el modelo, utilizado el método de Lucas-Kanade. 
+Resaltaron que la ventaja de dicho método es que en cuanto el objeto comienza
+moverse en cualquier dirección con respecto al fondo estacionario, la dirección de
+ese movimiento se agrega en marcos lo cual ayuda en la detección de la actividad que está ocurriendo.
+
+Como conclusiones se presentaron los porcentajes de la precisión promedio de los métodos siendo el mejor el de Lucas-Kanade (92,39\%) y el peor el método de utilización de óptica fluida (68,45\%).
+
