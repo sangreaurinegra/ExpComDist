@@ -7,3 +7,7 @@
 {"rule":"SPANISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QWizard de Test, automatiza el testeo de los paquetes desplegados, y la interacción de los agentes con los microservicios.\\E$"}
 {"rule":"SPANISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QWizard de Actualización, automatiza la actualización de agentes y microservicios desde repositorios externos y locales.\\E$"}
 {"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\Q.\\E$"}
+{"rule":"SUBJUNTIVO_PASADO","sentence":"^\\QHowever, they are not holistic for IoT applications given the restriction of the edge device like computation consumption and network capacity.\\E$"}
+{"rule":"SUBJUNTIVO_PASADO","sentence":"^\\QThe microservices are developed as docker containers, and comprehensive experimental results demonstrate the performance and interference of microservices running on benchmark scenarios.\\E$"}
+{"rule":"ESPACIO_DESPUES_DE_PUNTO","sentence":"^\\Qcs.DC\\E$"}
+{"rule":"ES_QUESTION_MARK","sentence":"^\\QWhat is Quarkus?\\E$"}

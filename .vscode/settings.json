@@ -2,6 +2,30 @@
     "ltex.additionalRules.motherTongue": "es",
     "cSpell.language": "es",
     "cSpell.words": [
-        "aproximación"
+        "Apéndice",
+        "aproximación",
+        "bibentry",
+        "bibliographic",
+        "computacional",
+        "computacionales",
+        "computing",
+        "dinámicamente",
+        "grid",
+        "Main",
+        "multiprocesador",
+        "Offloading",
+        "page",
+        "ranqueandolos",
+        "setup",
+        "standard",
+        "tells"
+    ],
+    "spellright.language": [
+        "en",
+        "es"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "plaintext"
     ]
 }
