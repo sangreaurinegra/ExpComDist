@@ -37,7 +37,8 @@
 %\documentclass[11pt]{york-thesis}
 
 \usepackage{epsfig}
-\usepackage{graphicx}
+\usepackage{graphicx} %_imagenes
+\graphicspath{ {./_imagenes/} }
 \usepackage{algorithm}
 \usepackage{algorithmic}
 %\usepackage{algorithmic2}
@@ -69,6 +70,7 @@
 \usepackage{appendix}
 \usepackage{bibentry}
 
+\usepackage[colorinlistoftodos,linecolor=blue,backgroundcolor=blue!25,bordercolor=blue]{todonotes}
 
 %\theoremstyle{plain}
 \theoremstyle{definition}
@@ -137,7 +139,7 @@
 \bibliographystyle{plain}
 
 %\bibliographystyle{IEEEtran}
-    
+
 % Apéndice
 \appendix
 \include{8_apendice}

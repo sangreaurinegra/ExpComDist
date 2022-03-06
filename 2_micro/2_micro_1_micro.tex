@@ -1,20 +1,32 @@
 \section{Microservicios}
 
+Los microservicios son componentes de software atómicos funcionalmente e independientes de los demás servicios del sistema. Dicha independencia es vertical y aunque puede consumir y ser consumido por los demás servicios (micro o no), solo se debe cumplir con los contratos de interfaz para sustituirlo por otro debido a su independencia técnica. De un micro servicio solo es necesario conocer que parámetros que toma, que resultado y el formato devuelve, y la ubicación para consumirlo. Debido a ello cada microservicio puede ser implementado por diferentes tecnologías como lenguajes, bases de datos, servidores de aplicaciones, servidores web, entre otros. Además pueden ser ubicadas en distintos lugares ya sea físico o técnico de acuerdo a las necesidades planteadas. Por ejemplo si la fuente de datos se encuentra en un lugar lejano seguramente es preferible que el microservicio que la utilice este cerca de ella para acceder a ellas de manera más veloz y retornar resultados más resumidos, pero además el hecho de que puedan ser implementados por distintas tecnologías lenguajes etc\dots permite que se puedan implementar para dispositivos de bajos recursos como pueden ser los dispositivos edge y a eso se hace referencia con distintos lugares técnicos.
+
+Las arquitecturas basadas en microservicios, son arquitecturas cuyos componentes son microservicios levemente acoplados, independientemente distribuibles y con un cometido funcional muy especifico. Las mismas se aprovechan de las ventajas de los microservicios para destacarse como arquitecturas más dinámicas sobre otras monolíticas.
+Algunas de las ventajas son la independencia a la hora de distribuir que permite actualizarlos sin actualizar toda la aplicación, poder utilizar la herramienta correcta para el problema especifico, escalamiento preciso al poder escalar lso microservicos que son necesarios y no toda app.
+
+También se dice que las arquitecturas de microservicios son una aproximacion a las arquietecturas nativas de la nubes de TODO
+
+
+-- formato de comunicacion communicate with one another over a combination of REST APIs, event streaming, and message brokers; and
+
+-- capas are organized by business capability, with the line separating services often referred to as a bounded context.
+
 Here are just a few of the enterprise benefits of microservices.
 
-    Independently deployable. ...
-    Right tool for the job. ...
-    Precise scaling. ...
-    There are challenges, too. ...
-    Containers, Docker, and Kubernetes. ...
-    API gateways. ...
-    Messaging and event streaming. ...
-    Serverless.
-    
-    https://www.ibm.com/cloud/learn/microservices
-    
-    
-    
+Independently deployable. ...
+Right tool for the job. ...
+Precise scaling. ...
+There are challenges, too. ...
+Containers, Docker, and Kubernetes. ...
+API gateways. ...
+Messaging and event streaming. ...
+Serverless.
+
+https://www.ibm.com/cloud/learn/microservices
+
+
+
 Because of many attractive features, such as good scalabil-
 ity, fine granularity, loose coupling, continuous development,
 and low maintenance cost, the microservices architecture has
@@ -40,4 +52,15 @@ allows the microservices to be deployed quickly but also
 consistently. Compared to VMs, containers not only provide
 all the libraries and other dependencies but also consume less
 resource and produce lower overhead
-    
+
+
+
+
+
+
+
+Microservicios vs SOA (serviceoriented architecture)
+The differences between microservices and SOA can be a bit less clear. While technical contrasts can be drawn between microservices and SOA, especially around the role of the enterprise service bus (ESB), it’s easier to consider the difference as one of scope. SOA was an enterprise-wide effort to standardize the way all web services in an organization talk to and integrate with each other, whereas microservices architecture is application-specific.
+
+https://www.ibm.com/cloud/blog/soa-vs-microservices
+
