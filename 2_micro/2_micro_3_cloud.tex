@@ -199,11 +199,11 @@ La tecnología provee dos opciones de virtualización, una basada en web roles q
 \end{description}
 
 
-\todo{faltan referencias}
+\red{faltan referencias}
 La elección del modelo a utilizar es fuertemente dependiente de las características del problema a resolver. Si se desea por ejemplo una aplicación con poca configuración y acceso a base de datos, Web Sites es la opción que mejor se adapta a estas necesidades. Por otro lado, si se desea crear una arquitectura con mas de una capa que ejecute aplicaciones con gran nivel de computo y específicas condiciones de escalado, Cloud Services es la opción correcta. En cambio, si se desea instalar en el cloud una aplicación que requiere gran configuración del sistema operativo subyacente, la mejor opción en este caso sera utilizar Virtual Machines.
 
 \subsection {Modelos de almacenamiento}
-\todo{faltan referencias}
+\red{faltan referencias}
 El acceso a datos en Azure se realiza mediante servicios RESTful pudiendo realizar llamados desde consola o aplicación web. Desde el portal también se pueden crear las cuentas de almacenamiento de forma rápida y sencilla. La cantidad de cuentas de almacenamiento que puede crear el usuario está limitado por el tipo de cuenta de Azure que el usuario posee. Azure provee cuatro opciones para el manejo de almacenamiento, blobs, tables, queues y drives o unidades.
 
 \begin{description}
@@ -211,20 +211,20 @@ El acceso a datos en Azure se realiza mediante servicios RESTful pudiendo realiz
     \item [Blobs.] Un Blob es un archivo de cualquier tipo. Existen dos tipos, Block y Page Blob. Block Blob es optimizado para el uso de streaming de datos mientras que Page Blob es optimizado para la realización de operaciones de lectura / escritura.Los blobs se alojan en Containers, pudiendo tener una cantidad ilimitada de Blobs respetando los tamaños máximos de almacenamiento permitido. El acceso a un Blob se realiza utilizando la URL con el formato
           http://[storageAccount].blob.core.windows.net/[container]/[blob]
 
-          \todo{faltan referencias}
+          \red{faltan referencias}
     \item [Tables.] Permite almacenar gran cantidad de datos estructurados. Una tabla es definida dentro de una cuenta de almacenamiento pero no dentro de un Container y esta conformada por un conjunto de entidades. La diferencia entre las tablas de Azure y las de base de datos relacionales es que las tablas de Azure no posee esquema de entidades, por lo que entidades de una misma tabla pueden poseer distintas propiedades.
 
-          \todo{faltan referencias}
+          \red{faltan referencias}
     \item [Queues.] Permite almacenar una gran cantidad de mensajes que pueden ser accedidos utilizando llamados HTTP o HTTPS autenticados. Pueden actuar como una forma de enrutar trabajo entre los diferentes roles dentro de una aplicación de una forma durable y escalable.
 
-          \todo{faltan referencias}
+          \red{faltan referencias}
     \item [Drives.] Son espacios NTFS donde podemos utilizar las APIs tradicionales de lectura y escritura. La diferencia de utilizar un servicio de drive o utilizar el drive de la máquina virtual es que el servicio de drive está disponible para todos los roles y preparado para escalar.
 
 
 \end{description}
 
 \subsection {HDInsight}
-\todo{faltan referencias}
+\red{faltan referencias}
 HDInsight es un servicio de Azure que provee y despliega clústers de Apache Hadoop \cite{hadoop} en el cloud, brindando un framework para analizar, manejar y reportar grandes volúmenes de datos, ofreciendo así una implementación del model MapReduce de Apache Hadoop para el análisis de big data. Los clusters Hadoop en HDInsight utilizan una versión de Hortonworks Data Platform(HDP) y un conjunto de componentes de Hadoop de dicha distribución. En la versión actual de HDInsight, la 3.1,   la versión 2.1.7 de HDP y 2.4.0 de Apache Hadoop. En HDInsight el sistema de archivos de Hadoop (HDSF) se almacena como Blobs en un Container asociado al cluster en la cuenta de almacenamiento.\\
 
 \begin{figure}[h!]

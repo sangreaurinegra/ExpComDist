@@ -1,87 +1,81 @@
 \paragraph{
-    \textbf{\emph{Automation of distributed data management in applied 
-                    microservices package for scientific computations
-            }
+    \textbf{\emph{Automation of distributed data management in applied
+            microservices package for scientific computations
+        }
     }
     \cite{oparin_automation_2020}.
 }
 
-En el marco de la conferencia 
-\textbf{The International Workshop on Information, Computation, and Control Systems for Distributed Environments}, 
-fue presentado el artículo en cuestión. 
+\paragraph{
+    En el marco de la conferencia
+    \textbf{The International Workshop on Information, Computation, and Control Systems for Distributed Environments},
+    fue presentado el artículo en cuestión en el cual se ofrece conjunto de herramientas especializadas para automatizar la gestión del conocimiento en
+    la creación de microservicios y la acumulación de datos, aplicado a
+    cálculos científicos en un entorno informático híbrido.
+}
 
-En el que se ofrece conjunto de herramientas especializadas para automatizar la gestión del conocimiento en
-la creación de microservicios y la acumulación de datos, aplicado a 
-cálculos científicos en un entorno informático híbrido.
+\paragraph{
+    Los autores se encfocaron en la utilización de microservicios para la automatización de la creación y adaptación de aplicaciones existentes para proveer la habilidad de resolver problemas complejos dentro de algún subject domain (SD).
+    Este artículo fue seleccionado porqeu utiliza una arquitectura de microservicios automatizada y como parte de una
+    lógica customizable.
+}
 
-Se enfocó en la utilización de microservicios para la automatización de la creación y adaptación de aplicaciones existentes
-para proveer la habilidad de resolver problemas complejos dentro de algún subject domain (SD).
+\paragraph{
+    El concepto arquitectónico base de microservicios que se utilizó es Applied Microservice Package (AMP),
+    el cual según se indicó provee de un camino efectivo para la computación científica distribuida.
+}
 
-El concepto arquitectónico base de microservicios que se utilizó es Applied Microservice Package (AMP),
-el cual según se indicó provee de un camino efectivo para la computación científica distribuida.
+\paragraph{
+    El modelo computacional AMP se encuentra representado por un conjunto de pequeñas piezas con bajo acoplamiento,
+    implementado con microservicios.
+}
 
-El modelo computacional AMP se encuentra representado por un conjunto de pequeñas piezas con bajo acoplamiento, 
-implementado con microservicios.
+\paragraph{
+    La inteligencia de las AMP esta basada en el modelo de SD,
+    que se comprende como una colección de información sobre los objetos SD y las relaciones entre ellos.
+    De esta manera el conjunto de herramientas desarrolladas automatiza la creación y actualización
+    de las bases locales de conocimiento del los agentes distribuidos. Las bases locales de conocimiento
+    son creadas de mediante el uso de interfaces administradas por estos agentes.
+    El sistema utiliza dicho conocimiento para testear las actualizaciones de los microservicios,
+    además de proveer sincronización y persistencia de los datos calculados.
+}
 
-La inteligencia de las AMP esta basada en el modelo de SD, 
-que se comprende como una colección de información sobre los objetos SD y las relaciones entre ellos.
+\paragraph{
+    Se mencionó que el uso de arquitectura de agentes en conjunto con microservicios provee de una oportunidad práctica
+    para implementar mecanismos de interacción semántica de los agentes en una red P2P.
+    Las ventajas de las redes P2P mencionadas fueron escalabilidad, minimización de costos de comunicación,
+    autoorganización adaptabilidad, tolerancia a fallos y autobalance de carga.
+    De esta manera fue evitada la centralización del acceso a los de servicios.
+}
 
-De esta manera el conjunto de herramientas desarrolladas automatiza la creación y actualización
-de las bases locales de conocimiento del los agentes distribuidos. Las bases locales de conocimiento 
-son creadas de mediante el uso de interfaces administradas por estos agentes. 
-El sistema utiliza dicho conocimiento para testear las actualizaciones de los microservicios, 
-además de proveer sincronización y persistencia de los datos calculados.
- 
-Por el hecho de plantear esta alternativa, que utiliza una arquitectura de microservicios automatizada y como parte de una 
-lógica customizable es que se realiza la revisión de este artículo.
+\paragraph{
+    LA validación de la solución se realizó mediante el desarrollo de una solución que se basó en contratos Booleanos (BDS) para Sistemas Dinámicos,
+    se validó la solución propuesta.
+    BDS tiene aplicación en el campo de la bioinformatica.
+}
 
+\paragraph{
+    Se diseñó un sistema que además de tener un administrador de autorización y manejo de archivos tiene
+    Administración de sincronización, Wizard de Creación, Wizard de Configuración, Wizard de Test, Wizard de Actualización. Donde la administración de sincronización, administra la sincronización de las bases de conocimientos locales. El Wizard de Creación, automatiza la creación de nuevos servicios basados e en plantillas estándar,
+    populando la base de conocimiento local. El Wizard de Configuración, automatiza el alta de parámetros de los agentes,
+    para definir la relación de los agentes con las funcionalidades de los microservicios. El Wizard de Test, automatiza el testeo de los paquetes desplegados, y la interacción de los agentes con los microservicios. El Wizard de Actualización, automatiza la actualización de agentes y microservicios desde repositorios externos y locales.
+    Se accede a todo el paquete administrativo a través de una interfaz web.
+}
 
-Se mencionó que el uso de arquitectura de agentes en conjunto con microservicios provee de una oportunidad práctica 
-para implementar mecanismos de interacción semántica de los agentes en una red P2P. 
+\paragraph{
+    El artículo explicitó el funcionamiento de la actualización y testeo de microservicios,
+    en el que se aclaró que en caso de que el microservicio estuviera involucrado
+    en un proceso en ejecución queda bloqueada la actualización hasta que esté se complete.
+    De igual manera se bloquea el acceso a usuarios a procesos que involucren el microservicio a actualizar y testear.
+    En cuanto al ejemplo práctico de la plataforma fue desarrollado AMP para el estudio cualitativo de BDS,
+    el cual se dividió en los siguientes grupos de microservicios creación de modelos booleanos, validación de los contratos booleanos, pre y postprocesador del procesamiento.
+}
 
-Las ventajas de las redes P2P mencionadas fueron escalabilidad, minimización de costos de comunicación, 
-autoorganización adaptabilidad, tolerancia a fallos y autobalance de carga. 
-De esta manera fue evitada la centralización del acceso a los de servicios.
-
-
-Mediante el desarrollo de una solución que se basó en contratos Booleanos (BDS) para Sistemas Dinámicos, 
-se validó la solución propuesta. 
-BDS tiene aplicación en el campo de la bioinformatica.
-
-Se diseñó un sistema que además de tener un administrador de autorización y manejo de archivos tiene:
-
-\begin{itemize}
-    \item Administración de sincronización, administra la sincronización de las bases de conocimientos locales.
-    \item Wizard de Creación, automatiza la creación de nuevos servicios basados e en plantillas estándar,
-     populando la base de conocimiento local.
-    \item Wizard de Configuración, automatiza el alta de parámetros de los agentes, 
-    para definir la relación de los agentes con las funcionalidades de los microservicios.
-    \item Wizard de Test, automatiza el testeo de los paquetes desplegados, 
-    y la interacción de los agentes con los microservicios.
-    \item Wizard de Actualización, 
-    automatiza la actualización de agentes y microservicios desde repositorios externos y locales.
-\end{itemize}
-
-Se accede a todo el paquete administrativo a través de una interfaz web.
-
-
-Luego se explicitó el funcionamiento de la actualización y testeo de microservicios, 
-en el que se aclaró que en caso de que el microservicio estuviera involucrado 
-en un proceso en ejecución queda bloqueada la actualización hasta que esté se complete. 
-De igual manera se bloquea el acceso a usuarios a procesos que involucren el microservicio a actualizar y testear. 
-
-En cuanto al ejemplo práctico de la plataforma fue desarrollado AMP para el estudio cualitativo de BDS, 
-el cual se dividió en los siguientes grupos de microservicios:
-
-\begin{itemize}
-    \item Creación de modelos Booleanos.
-    \item Validación de los contratos Booleanos.
-    \item Pre y postprocesador del procesamiento.
-\end{itemize}
-
-Se concluyó que el conjunto de herramientas provee varios modelos de datos,
-sincronizando entre recursos locales y de la nube, microservicios actualizados y testeados. 
-Las pruebas realizadas confirmaron la efectividad de la solución para resolver
-problemas prácticos significativos de carácter científico. Como también que la automatización y administración 
-mejora la productividad del desarrollador, creando y actualizando AMP, como también la del usuario final en la 
-solución de problemas de investigación de BDS.
+\paragraph{
+    La conclusión fué que el conjunto de herramientas provee varios modelos de datos,
+    sincronizando entre recursos locales y de la nube, microservicios actualizados y testeados.
+    Las pruebas realizadas confirmaron la efectividad de la solución para resolver
+    problemas prácticos significativos de carácter científico. Como también que la automatización y administración
+    mejora la productividad del desarrollador, creando y actualizando AMP, como también la del usuario final en la
+    solución de problemas de investigación de BDS.
+}

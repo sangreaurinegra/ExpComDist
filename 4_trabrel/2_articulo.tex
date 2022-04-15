@@ -1,45 +1,41 @@
 \paragraph{\textbf{
-    \emph{ Microservice-Oriented Platform for Internet of Big Data Analytics: A Proof of Concept }
-} \cite{li_microservice-oriented_2019}} 
-
-El artículo se basó en que los dispositivos de internet de las cosas (su sigla en inglés IoT) generan numerosos datos desde cualquier lugar y en cualquier momento.
-
-Se planteó demostrar que no siempre es necesario centralizar y analizar los datos acumulados como plantea las implementaciones tradicionales de análisis de grandes volúmenes de datos (su sigla en inglés BDA). Para identificar el concepto planteado de BDA implementado sobre IoT se definió en el artículo la sigla IoTBDA.
-
-Fue señalado innecesariamente son trasmitidos grandes volúmenes de datos hacia el sistema centralizado, pudiendo trasmitir los datos preprocesados, reduciendo así el costo de trasmisión de los mismos. 
-Inspirados en la infraestructura definida por el software (su sigla en inglés SDI), se plantea una plataforma orientada a microservicios para partir la concepción monolítica de BDA y crear así componentes desacoplados y reutilizables.
-
-Los recursos físicos para la infraestructura fueron definidos en la medida que han sido tratados los mecanismos de soporte intermedio como capas, entre los trabajos en tiempo de ejecución y la infraestructura de los mismos.
-Fue indicado que  de acuerdo a las especificaciones funcionales de las plataformas BDA, generalmente se combina el procesamiento de datos en conjunto con la gestión de los recursos informáticos. Incluso el almacenamiento de los datos en ocasiones son parte de la plataforma, dando lugar a un sistema que requiere un esfuerzo significante en cuanto a configuración y manipulación.
-
-En cuanto a la arquitectura basada en microservicios (su sigla en inglés MSA) fueron destacadas varias cualidades aplicadas a IoTBDA. Entre ellas la posibilidad de descomponer sistemas monolíticos en múltiples sistemas de menor escala perdiendo acoplamiento y ganando independencia al desplegar, como así la utilización de métodos de comunicación livianos entre ellos. También se brinda la posibilidad de dado problemas particulares no solo desarrollar microservicios para ese problema, sino que realizar microservicios reutilizables creándolos funcionalmente genéricos, que queden como componentes de lógica prediseñados de otras soluciones, o como plantillas de microservicios. Se menciona que la practica las plataformas orientadas a MSA pueden ser orquestadas por microservicios un conjunto de microservicios estándar o plantillas de estos. Este unto en particular es de interés para la realización del proyecto, puesto que es considerada la orquestación como uno de los temas esenciales  a  la hora de diseñar una MSA. 
-
-Los sensores que se mencionan como componentes de borde de la IoTBDA no poseen una forma estándar de comunicación entre ello ni con los servidores, existiendo incompatibilidades entre ellos y protocolos propietarios para asegurarse un mercado en contra de sus competidores. Exponiendo las diferentes tareas de procesamiento por microservicios a través de  interfaces en una API con un lenguaje unificado, que evitaría esos inconvenientes permitiendo que no se vea comprometida la heterogeneidad de los sensores de borde.
+        \emph{ Microservice-Oriented Platform for Internet of Big Data Analytics: A Proof of Concept }
+    } \cite{li_microservice-oriented_2019}}
 
 
-Se apreció que la tecnología de contenedores que además de estar  en una etapa creciente, permite el soporte para múltiples dispositivos de borde.
 
+\paragraph{
+    El artículo se basó en que los dispositivos de internet de las cosas (su sigla en inglés IoT) generan numerosos datos desde cualquier lugar y en cualquier momento. Se planteó demostrar que no siempre es necesario centralizar y analizar los datos acumulados como plantean las implementaciones tradicionales de análisis de grandes volúmenes de datos (su sigla en inglés BDA), en donde son trasmitidos grandes volúmenes de datos hacia el sistema centralizado, pudiendo reducir el costo de la trasmision preprocesandolos de manera anticipada. Se definió en el artículo la sigla IoTBDA para identificar el concepto planteado de BDA implementado sobre IoT.
+}
 
-Mediante diseños de MSA fue implantado IoTBDA. En un primer caso se planteó como arquitectura un conjunto de sensores a través de una instancia de observador, contra un único procesador central. 
+\paragraph{
+    Los autores plantearon una plataforma orientada a microservicios inspirados en la infraestructura definida por el software (su sigla en inglés SDI).
+    Se indicó que de acuerdo a las especificaciones funcionales de las plataformas BDA, generalmente se combina el procesamiento de datos en conjunto con la gestión de los recursos informáticos. Incluso el almacenamiento de los datos en ocasiones es parte de la plataforma, dando lugar a un sistema que requiere un esfuerzo significante en cuanto a configuración y manipulación.
+    En cuanto a la arquitectura basada en microservicios (su sigla en inglés MSA) fueron destacadas varias cualidades aplicadas a IoTBDA. Entre las cualidades se encuentra la posibilidad de descomponer sistemas monolíticos en múltiples sistemas de menor escala, perdiendo acoplamiento y brindado la posibilidad de escalar solo los servicios necesarios. Además la MSA brinda la posibilidad de dado problemas particulares no solo desarrollar microservicios para ese problema, sino que realizar microservicios reutilizables creándolos funcionalmente genéricos, o como plantillas de microservicios.
+}
 
+\paragraph{
+    Las plataformas orientadas a MSA pueden ser orquestadas por microservicios, un conjunto de microservicios estándar o plantillas de estos. Esto último en particular es de interés para la realización del proyecto, puesto que es considerada la orquestación como uno de los temas esenciales a la hora de diseñar una MSA. Mediante diseños de MSA fue implantado IoTBDA. En un primer caso se planteó como arquitectura un conjunto de sensores a través de una instancia de observador, contra un único procesador central.
+}
 
-Una lógica orientada a microservicios fue utilizada para la implementación del método de Montecarlo. Mediante tres elementos principales, los observadores llamados templates de microservicios que sé instancia para una tarea específica. 
-Un procesador central que en principio funciona como splitter o sea dividen todo el trabajo en piezas independientes y se lo asigna a cada observador. Luego tomando los resultados este y los carga en el aggregator, el cual se recolecta los resultados globales para poder ser consultados de forma inmediata. 
+\paragraph{
+    Los autores consideraron que la tecnología de contenedores que además de estar en una etapa creciente, permite el soporte para múltiples dispositivos de borde.
+    Los sensores que se mencionaron como componentes de borde de la IoTBDA no poseen una forma estándar de comunicación con otros sensores ni con los servidores, existiendo incompatibilidades y protocolos propietarios para asegurarse un mercado en contra de sus competidores. Exponiendo las diferentes tareas de procesamiento por microservicios a través de  interfaces en una API con un lenguaje unificado, que evitaría esos inconvenientes permitiendo que no se vea comprometida la heterogeneidad de los sensores de borde.
+}
 
+\paragraph{
+    El caso de prueaba incluyó la implementecion del método de Montecarlo utilizando lógica orientada a microservicios.
+    En la  MSA se definieron tres elementos principales observadores, un procesador central y un aggregator.
+    Los observadores también llamados templates de microservicios son instanciados para una tarea específica.
+    Un procesador central que en principio funciona como splitter o sea divide todo el trabajo en piezas independientes y se lo asigna a cada observador.
+    Luego tomando los resultados este y los carga en el aggregator, el cual se recolecta los resultados globales para poder ser consultados de forma inmediata.
+    Como análisis conceptual, se estimó el valor de una integral doble mediante la aproximación utilizado el método de Montecarlo. Esto fue realizado para validar la solución de la arquitectura presentada y evaluar el funcionamiento de la misma como así su eficiencia. Se realizó el cálculo de aproximación a una integral por 10 millones de puntos aleatorios en un entorno distribuido y se comparó con una ejecución local sobre el mismo problema.
+    El procesador central efectuó la reducción de los datos o sea que existe cierta similitud con lo que sería un map reduce, donde el mapa de los observadores y reduciendo el procesador central dejando los resultados en el observation aggregator donde puede ser consultados a este de forma inmediata.
+}
 
-Como análisis conceptual, se estimó el valor de una integral doble mediante la aproximación utilizado el método de Montecarlo. Esto fue realizado para validar la solución de la arquitectura presentada y evaluar el funcionamiento de la misma como así su eficiencia. Se realizó el cálculo de aproximación a una integral por 10 millones de puntos aleatorios en un entorno distribuido y se comparó con una ejecución local sobre el mismo problema. 
-
-
-El procesador central efectúa la reducción de los datos o sea que existe cierta similitud con lo que sería un map reduce, donde el mapa de los observadores y reduciendo el procesador central dejando los resultados en el observation aggregator donde puede ser consultados a este de forma inmediata.
-
-
-Fue indicado que la lógica orientada a microservicios para el análisis convergente se ajusta más a las características de IoTBDA. Al ser considerada una topología de árbol para el análisis convergente (como un map reduce en cascada) se reduce el tamaño de la transmisión de datos. 
-
-
-Existe un paralelismo entre microservicios para el análisis convergente y la lógica de map reduce. Es posible descomponer en partes de problemas específicos como los mapas y los reduce para ser implementado por microservicios. 
-
-
-De esta manera se validan los modelos de arquitectura para IoTBDA identificando los sensores (como ser dispositivos móviles) como observers, optimizando el tráfico y recolección de datos a través de la arquitectura presentada como análisis convergente.
-
-
-Mediante la prueba conceptual se determinó que mediante la convergencia intermedia (como plantea el análisis convergente)  disminuye en un 97\% la transmisión de datos y en la convergencia final y salva un 61\% de transmisión de datos. Lo cual hace muy atractivo este enfoque. 
+\paragraph{
+    La conclusion fue que la lógica orientada a microservicios para el análisis convergente se ajusta más a las características de IoTBDA. Al ser considerada una topología de árbol para el análisis convergente (como un map reduce en cascada) se reduce el tamaño de la transmisión de datos.
+    Existe un paralelismo entre microservicios para el análisis convergente y la lógica de map reduce. Es posible descomponer en partes de problemas específicos como los mapas y los reduce para ser implementado por microservicios.
+    De esta manera se validan los modelos de arquitectura para IoTBDA identificando los sensores (como ser dispositivos móviles) como observers, optimizando el tráfico y recolección de datos a través de la arquitectura presentada como análisis convergente.
+    Mediante la prueba conceptual se determinó que mediante la convergencia intermedia (como plantea el análisis convergente)  disminuye en un 97\% la transmisión de datos y en la convergencia final y salva un 61\% de transmisión de datos. Lo cual hace muy atractivo este enfoque.
+}

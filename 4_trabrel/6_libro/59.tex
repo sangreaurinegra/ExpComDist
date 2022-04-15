@@ -8,37 +8,42 @@
     \cite[pág. 59]{chaudhary_microservices_2020}.
 }
 
-En este caso los autores presentaron un sistema que le llamaron mobile cloud computing (MCC).
-Plantearon que una serie de dispositivos móviles conectados a la misma red y que tuvieran instalada localmente la aplicación de ellos, podía en conjunto con un sistema informático externo al MCC, resolver (como ellos los llamaron) grande e intensivas tareas computacionales. Para ello se plantearon que la mayor parte del tiemplo los dispositivos móviles se encuentran ociosos. Entonces sería posible utilizar los recursos ociosos para ejecutar dichas tareas. Si bien están involucrados una serie de dispositivos también el MCC puede acceder a un servicio de nube computacional para tareas que se consideren necesario ejecutarlas allí, cuyo resultado sería consolidado por la MCC.
 
-La división de tareas es analizada comparando 2 formas posibles, como ser la división equitativa y la división realiza algoritmo de resignación que toma en cuenta factores como poder de procesamiento, carga de batería,
-almacenamiento, ancho de banda, entre otras.
-Frente a la necesidad de ejecutar una tarea que requiera cierto poder computacional se crearía dinámicamente este cloud de dispositivos ociosos,
-uso de concepto utilizando Elastic Offloading, que significa migrar el procesamiento a dispositivos con más recursos.
+\paragraph{
+    En este articulo los autores presentaron un sistema que le llamaron mobile cloud computing (MCC).
+    Plantearon que una serie de dispositivos móviles conectados a la misma red y que tuvieran instalada localmente la aplicación de ellos, podía en conjunto con un sistema informático externo al MCC, resolver (como ellos los llamaron) grande e intensivas tareas computacionales. Para ello se plantearon que la mayor parte del tiemplo los dispositivos móviles se encuentran ociosos. Entonces sería posible utilizar los recursos ociosos para ejecutar dichas tareas. Si bien están involucrados una serie de dispositivos también el MCC puede acceder a un servicio de nube computacional para tareas que se consideren necesario ejecutarlas allí, cuyo resultado sería consolidado por la MCC.
+}
 
-Elastic Offloading difiere del modelo de migración utilizado por la computación grid y sistemas de multiprocesador en los cuales los procesos son migrados por un balanceador de carga. El algoritmo que presentaron los autores decide la división de datos proporcionalmente basándose en una serie de parámetros.
-En el artículo se presentó una tabla con las diferentes estrategias de Offloading.
-\begin{table}[t]
-    \begin{center}
-        \begin{tabular}{ | m{2cm} | m{2,5cm} | m{2,5cm} | m{2cm} | m{3,5cm} |}
-            \hline
-            Framework   & Meta                             & Código               & Offloading                     & Mobile                                          \\ \hline
-            MAUI        & Ahorro de energía                & Anotaciones manuales & No                             & Bajo consumo de recursos. Mejora la performance \\ \hline
-            Clone Cloud & Migracion de codigo trasparente  & Proceso automatizado & No                             & Mejora la performance                           \\ \hline
-            Thinkair    & Escalabilidad                    & Manual annotations   & No                             & Mejora la performance                           \\ \hline
-            COMET       & Migración de código trasparente  & Proceso automatizado & No                             & Mejora la velocidad promedio                    \\ \hline
-            Odessa      & Sensibilidad                     & Proceso automatizado & No                             & La aplicacion en 3 veces mas rapida             \\ \hline
-            EMCO        & Adaptación basada en el contacto & Proceso automatizado & Basado en los datos historicos & Basado en el contexto                           \\ \hline
-        \end{tabular}
-    \end{center}
-\end{table}
+\paragraph{
+    La división de tareas fué analizada comparando 2 formas posibles, como ser la división equitativa y la división realiza algoritmo de resignación que toma en cuenta factores como poder de procesamiento, carga de batería,
+    almacenamiento, ancho de banda, entre otras.
+    Frente a la necesidad de ejecutar una tarea que requiera cierto poder computacional se crearía dinámicamente este cloud de dispositivos ociosos,
+    uso de concepto utilizando Elastic Offloading, que significa migrar el procesamiento a dispositivos con más recursos.
+    Elastic Offloading difiere del modelo de migración utilizado por la computación grid y sistemas de multiprocesador en los cuales los procesos son migrados por un balanceador de carga. El algoritmo que presentaron los autores decide la división de datos proporcionalmente basándose en una serie de parámetros.
+    En el artículo se presentó una tabla con las diferentes estrategias de Offloading.
+    \begin{table}[t]
+        \begin{center}
+            \begin{tabular}{ | m{2cm} | m{2,5cm} | m{2,5cm} | m{2cm} | m{3,5cm} |}
+                \hline
+                Framework   & Meta                             & Código               & Offloading                     & Mobile                                          \\ \hline
+                MAUI        & Ahorro de energía                & Anotaciones manuales & No                             & Bajo consumo de recursos. Mejora la performance \\ \hline
+                Clone Cloud & Migracion de codigo trasparente  & Proceso automatizado & No                             & Mejora la performance                           \\ \hline
+                Thinkair    & Escalabilidad                    & Manual annotations   & No                             & Mejora la performance                           \\ \hline
+                COMET       & Migración de código trasparente  & Proceso automatizado & No                             & Mejora la velocidad promedio                    \\ \hline
+                Odessa      & Sensibilidad                     & Proceso automatizado & No                             & La aplicacion en 3 veces mas rapida             \\ \hline
+                EMCO        & Adaptación basada en el contacto & Proceso automatizado & Basado en los datos historicos & Basado en el contexto                           \\ \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+}
 
+\paragraph{
+    La investigación se basó en la creación de un sistema mediante el cual los dispositivos exponen sus características y el poder de procesamiento ocioso, para luego distribuir las tareas de acuerdo a esos datos.
+    Los objetivos fueron la preparación de una nube heterogénea ad hoc de dispositivos móviles y la creación de una estrategia para distribuir las tareas para de esa manera reducir de esta manera los tiempos de ejecución.
+    Se asumió que todos los dispositivos contaban con la aplicación instalada, con Android con soporte de wifi direct, los dispositivos conectados a la misma red, independencia de tareas y que als tareas fuesen divisibles. Fue utilizado el algoritmo de división de datos presentado por Devadkar, K.K., Kalbande, D.R en 2015 para decidir sobre el porcentaje computacional de los dispositivos ranqueandolos y de acuerdo a ello distribuir las tareas. Fueron tomados en cuenta las características como porcentaje de batería remanente, poder de procesamiento según los Mhz del procesador (algo que no necesariamente indica la capacidad de procesamiento de un procesador) y la RAM libre. Se presentaron una seria de gráficas comparativas muy completas con aplicaciones base como la típica de contar palabras muy utilizada para probar sistemas distribuidos.
+}
 
-La investigación se basó en la creación de un sistema mediante el cual los dispositivos exponen sus características y el  poder de procesamiento ocioso.
-Para luego distribuir las tareas de acuerdo a esos datos. Los objetivos fueron la preparación de una nube heterogénea ad hoc de dispositivos móviles y la creación de una estrategia para distribuir las tareas para de esa manera reducir de esta manera los tiempos de ejecución.
-Se asumió que todos los dispositivos contaban con la aplicación instalada, con Android con soporte de wifi direct, los dispositivos conectados a la misma red, independencia de tareas y que als tareas fuesen divisibles. Se utilizó el algoritmo de división de datos presentado por Devadkar, K.K., Kalbande, D.R en 2015 para decidir sobre el porcentaje computacional de los dispositivos ranqueandolos y de acuerdo a ello distribuir las tareas. Fueron tomados en cuenta las características como porcentaje de batería remanente, poder de procesamiento según los Mhz del procesador (algo que no necesariamente indica la capacidad de procesamiento de un procesador) y la RAM libre. Se presentaron una seria de gráficas comparativas muy completas con aplicaciones base como la típica de contar palabras muy utilizada para probar sistemas distribuidos.
-
-
-Los investigadores obtuvieron como resultado que para número pequeño de entradas no hay casi diferencia entre ejecutar en un solo dispositivo que en modo distribuido, no asi en entradas mayores donde la división basada en perfiles prevalecen en un 60\% por encima de la división igualitaria.
-Esta conclusión deja a las claras la importancia de conocer la capacidad de procesamiento de los nodos de un sistema distribuido y asi como la importacia del algoritmo a aplicar para la distribución de tareas, para de esta manera maximizar la capacidad de cómputo del sistema.
-
+\paragraph{
+    El resultado fué que para número pequeño de entradas no hay casi diferencia entre ejecutar en un solo dispositivo que en modo distribuido, no asi en entradas mayores donde la división basada en perfiles prevalecen en un 60\% por encima de la división igualitaria.
+    Esta conclusión deja a las claras la importancia de conocer la capacidad de procesamiento de los nodos de un sistema distribuido y asi como la importacia del algoritmo a aplicar para la distribución de tareas, para de esta manera maximizar la capacidad de cómputo del sistema.
+}

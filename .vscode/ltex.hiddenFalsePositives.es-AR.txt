@@ -11,3 +11,4 @@
 {"rule":"SUBJUNTIVO_PASADO","sentence":"^\\QThe microservices are developed as docker containers, and comprehensive experimental results demonstrate the performance and interference of microservices running on benchmark scenarios.\\E$"}
 {"rule":"ESPACIO_DESPUES_DE_PUNTO","sentence":"^\\Qcs.DC\\E$"}
 {"rule":"ES_QUESTION_MARK","sentence":"^\\QWhat is Quarkus?\\E$"}
+{"rule":"AGREEMENT_POSTPONED_ADJ","sentence":"^\\QLos autores utilizaron para su investigación contenedores docker.\\E$"}
