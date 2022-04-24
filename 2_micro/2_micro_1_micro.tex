@@ -1,12 +1,18 @@
 \section{Microservicios}
 
-Los microservicios son componentes de software atómicos funcionalmente e independientes de los demás servicios del sistema. Dicha independencia es vertical y aunque puede consumir y ser consumido por los demás servicios (micro o no), solo se debe cumplir con los contratos de interfaz para sustituirlo por otro debido a su independencia técnica. De un micro servicio solo es necesario conocer que parámetros que toma, que resultado y el formato devuelve, y la ubicación para consumirlo. Debido a ello cada microservicio puede ser implementado por diferentes tecnologías como lenguajes, bases de datos, servidores de aplicaciones, servidores web, entre otros. Además pueden ser ubicadas en distintos lugares ya sea físico o técnico de acuerdo a las necesidades planteadas. Por ejemplo si la fuente de datos se encuentra en un lugar lejano seguramente es preferible que el microservicio que la utilice este cerca de ella para acceder a ellas de manera más veloz y retornar resultados más resumidos, pero además el hecho de que puedan ser implementados por distintas tecnologías lenguajes etc\dots permite que se puedan implementar para dispositivos de bajos recursos como pueden ser los dispositivos edge y a eso se hace referencia con distintos lugares técnicos.
+\subsection{Definición}
+\paragraph{
+    Los microservicios son componentes de software atómicos funcionalmente e independientes de los demás servicios del sistema. La independencia es vertical y aunque puede consumir y ser consumido por otros servicios (micro o no), solo se debe cumplir con los contratos de interfaz para sustituirlo por otro. De un microservicio solo es necesario conocer que parámetros que toma, que resultado y el formato devuelve, y la ubicación para consumirlo. Debido a su independencia técnica cada microservicio puede ser implementado por diferentes tecnologías como, lenguajes de programación, bases de datos, servidores de aplicaciones, servidores web, entre otros. Los microservicios pueden ser ubicados en distintos lugares ya sea por motivos fisicos o técnicos, de acuerdo a las necesidades planteadas. Un ejemplo de motivos fisicos sería que la fuente de datos que debe consumir el microservicio se encuentre en un lugar lejano, en este caso es preferible que el microservicio que la utilice este cerca de la fuente. Estando cerca de la uente el microservicio no solo puede acceder a los datos de manera mas rapida sino que al retornar datos resumidos podria acelerar el porcesamieto de un sistema con un componete central que utilice los datos retornados (ejemplos IoT, edge). En cuanto a los motivos tecnicos para la ubicacion de los microservicios se puede indicar que el hecho de que puedan ser implementados por distintas tecnologías, permite que se puedan implementar para dispositivos de bajos recursos como pueden ser los dispositivos edge.
+}
 
-Las arquitecturas basadas en microservicios, son arquitecturas cuyos componentes son microservicios levemente acoplados, independientemente distribuibles y con un cometido funcional muy especifico. Las mismas se aprovechan de las ventajas de los microservicios para destacarse como arquitecturas más dinámicas sobre otras monolíticas.
-Algunas de las ventajas son la independencia a la hora de distribuir que permite actualizarlos sin actualizar toda la aplicación, poder utilizar la herramienta correcta para el problema especifico, escalamiento preciso al poder escalar lso microservicos que son necesarios y no toda app.
+\subsection{Arquitectura}
+\paragraph{
+    Las arquitecturas basadas en microservicios, son arquitecturas cuyos componentes son microservicios levemente acoplados, independientemente distribuibles y con un cometido funcional muy especifico. Las mismas se aprovechan de las ventajas de los microservicios para destacarse como arquitecturas más dinámicas sobre otras monolíticas.
+    Algunas de las ventajas son la independencia a la hora de distribuir que permite actualizarlos sin actualizar toda la aplicación, poder utilizar la herramienta correcta para el problema especifico, escalamiento preciso al poder escalar lso microservicos que son necesarios y no toda app.
 
-También se dice que las arquitecturas de microservicios son una aproximacion a las arquietecturas nativas de la nubes de TODO
+    También se dice que las arquitecturas de microservicios son una aproximacion a las arquietecturas nativas de la nubes de TODO
 
+}
 
 -- formato de comunicacion communicate with one another over a combination of REST APIs, event streaming, and message brokers; and
 
@@ -63,4 +69,22 @@ Microservicios vs SOA (serviceoriented architecture)
 The differences between microservices and SOA can be a bit less clear. While technical contrasts can be drawn between microservices and SOA, especially around the role of the enterprise service bus (ESB), it’s easier to consider the difference as one of scope. SOA was an enterprise-wide effort to standardize the way all web services in an organization talk to and integrate with each other, whereas microservices architecture is application-specific.
 
 https://www.ibm.com/cloud/blog/soa-vs-microservices
+
+
+****
+
+de https://www.leanix.net/en/blog/benefits-of-using-microservices-with-big-data-applications
+
+Application Scalability
+
+Traditional monolithic applications simply do not offer the flexibility that applications built on microservices do. An application running on microservices have each supporting component running on different servers, which can be scaled up or down whenever needed. Big Data systems tend to process a lot of data at a higher speed than applications ran on monolithic frameworks can handle.
+Data Consistency & Quality
+
+Big Data increases the velocity and volume of data being processed at one time on a server. It also increases the variety and veracity of uncertain data. As data volume increases, it is important to keep an eye on the data quality. For example, A data error on the Nasdaq exchange caused chaos recently, as the introduction of test data into the live systems vastly impacted the shares prices of a number of tech companies. Two notable examples: Amazon prices crashed by 87%, while Zynga bounced up by an amazing 3,292%. In this case, the error can be linked directly to data quality.
+
+Applications built on microservices are easier to maintain, test, and scale than monolithic applications.
+
+Ease of Code Modification
+
+Microservice frameworks allow for different employees specializing in various coding languages to modify code. This will add direct benefits to your organization, mainly including diversifying and strengthening your talent pool.
 
