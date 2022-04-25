@@ -1,74 +1,104 @@
 \section{Microservicios}
 
+\subsection{Definición}
 \paragraph{
-    Los microservicios son componentes de software atómicos funcionalmente e independientes de los demás servicios del sistema. La independencia es vertical y aunque puede consumir y ser consumido por otros servicios (micro o no), solo se debe cumplir con los contratos de interfaz para sustituirlo por otro. De un microservicio solo es necesario conocer que parámetros que toma, que resultado y el formato devuelve, y la ubicación para consumirlo.
-    Debido a su independencia técnica cada microservicio puede ser implementado por diferentes tecnologías como, lenguajes de programación, bases de datos, servidores de aplicaciones, servidores web, entre otros. Los microservicios pueden ser ubicados en distintos lugares ya sea por motivos físicos o técnicos, de acuerdo a las necesidades planteadas. Un ejemplo de motivos físicos sería que la fuente de datos que debe consumir el microservicio se encuentre en un lugar lejano, en este caso es preferible que el microservicio que la utilice este cerca de la fuente. Estando cerca de la fuente el microservicio no solo puede acceder a los datos de manera mas rápida sino que al retornar datos resumidos podría acelerar el procesamiento de un sistema con un componente central que utilice los datos retornados (ejemplos IoT, edge). En cuanto a los motivos técnicos para la ubicación de los microservicios se puede indicar que el hecho de que puedan ser implementados por distintas tecnologías, permite que se puedan implementar para dispositivos de bajos recursos como pueden ser los dispositivos edge.
+    Los microservicios son componentes de software atómicos funcionalmente e independientes de los demás servicios del sistema. La independencia es vertical, aunque puede consumir y ser consumido por otros servicios (micro o no) y solo se debe cumplir con los contratos de interfaz para sustituirlo por otro. De un microservicio solo es necesario conocer los parámetros que requiere, los resultados que retorna y la ubicación.
+    Debido a su independencia técnica cada microservicio puede ser implementado por diferentes tecnologías como, lenguajes de programación, bases de datos, servidores de aplicaciones, servidores web, entre otros.
 }
 
+\subsection{Arquitectura}
 \paragraph{
-    Las arquitecturas basadas en microservicios, son arquitecturas cuyos componentes son microservicios levemente acoplados, independientemente distribuibles y con un cometido funcional muy especifico. 
+    Las arquitecturas basadas en microservicios, son arquitecturas cuyos componentes son microservicios con bajo acoplamiento, independientemente distribuibles y con un cometido funcional muy especifico.
     Las mismas se aprovechan de las ventajas de los microservicios para destacarse como arquitecturas más dinámicas sobre otras monolíticas.
-    Algunas de las ventajas son la independencia a la hora de distribuir que permite actualizarlos sin actualizar toda la aplicación, poder utilizar la herramienta correcta para el problema especifico, escalamiento preciso al poder escalar los microservicios que son necesarios y no toda app.
-    También se dice que las arquitecturas de microservicios son una aproximación a las arquitecturas nativas de la nubes de TODO
+    Algunas de las ventajas son la independencia a la hora de distribuir que permite actualizarlos sin actualizar toda la aplicación, poder utilizar la herramienta correcta para el problema específico, escalamiento preciso al poder escalar los microservicios que son necesarios y no toda app.
+    Debido a todas características, como una buena escalabilidad, granularidad fina, bajo acoplamiento, desarrollo continuo, y bajo costo de mantenimiento, la arquitectura de microservicios ganó muchos intereses tanto en la industria como
+    comunidad académica. Cada microservicio realiza una función específica subtarea o servicio, que requiere menos recursos de cómputo
+    y reduce la sobrecarga de comunicación. Tales características hace que la arquitectura de microservicios sea una buena candidata para construir una plataforma flexible, que sea fácil de desarrollar y mantener.
 }
 
--- formato de comunicacion communicate with one another over a combination of REST APIs, event streaming, and message brokers; and
+\subsection{Beneficios}
 
--- capas are organized by business capability, with the line separating services often referred to as a bounded context.
+Los beneficios principales de los microservicios son,
+\begin{itemize}
+    \item Independencia de despliegue.
+    \item Herramienta adecuada para la solución.
+    \item Escalamiento preciso.
+    \item Ubicación estratégica.
+\end{itemize}
 
-Here are just a few of the enterprise benefits of microservices.
+\subsubsection{Independencia de despliegue}
+\paragraph{
+    Quizás la característica más importante de los microservicios es que debido a que los servicios son más pequeños y se pueden implementar de forma independiente, es posible realizar cambios en ellos, que mediante estrategias no afectarían al resto del sistema. Esto permite realizar cambios de manera más ágil sin la necesidad de dedicar tanto a impactar cambios en un sistema monolítico.
+    Y citando a cite{ibmmicroservicios}, el bajo acoplamiento de los microservicios también crea un grado de aislamiento de fallas y una mejor resiliencia en las aplicaciones. Y el pequeño tamaño de los servicios, combinado con sus límites claros y patrones de comunicación, facilita que los nuevos miembros del equipo comprendan el código base y contribuyan rápidamente, un claro beneficio en términos de velocidad y moral de los desarrolladores.
+}
 
-Independently deployable. ...
-Right tool for the job. ...
-Precise scaling. ...
-There are challenges, too. ...
-Containers, Docker, and Kubernetes. ...
-API gateways. ...
-Messaging and event streaming. ...
-Serverless.
-
-https://www.ibm.com/cloud/learn/microservices
-
-
-
-Because of many attractive features, such as good scalabil-
-ity, fine granularity, loose coupling, continuous development,
-and low maintenance cost, the microservices architecture has
-emerged and gained a lot of interests both in industry and
-academic community
-Compared to traditional SOAs
-in which the system is a monolithic unit, the microservices
-architecture divides an monolithic application into multiple
-atomic microservices that run independently on distributed
-computing platforms
-
-ach microservice performs one specific
-sub-task or service, which requires less computation resource
-and reduces the communication overhead. Such characteristics
-make the microservices architecture an ideal candidate to
-build a flexible platform, which is easy to be developed and
-maintained for cross-domain applications
+\subsubsection{Herramienta adecuada para la solución}
+\paragraph{
+    En los patrones tradicionales de arquitectura en capas, una aplicación normalmente comparte una base de datos relacional utilizado un mimso stack tecnologico. Este enfoque tiene varios inconvenientes, el más importante de los cuales es que cada componente de una aplicación debe compartir un modelo de datos y una pila en comun, aunque exista una mejor herramienta para realizar el trabajo que se quiere agregar al sistema.
+    En el caso de un modelo de microservicios, los componentes se implementan de forma independiente y se comunican a través de una combinación de REST \cite{RESTWikimedia2022Jan}, transmisión de eventos y agentes de mensajes. Gracias a este tipo de implementación se puede optimizar la pila de cada servicio individualmente. Dado que la tecnología cambia todo el tiempo es muy importante tener la posibilidad de realizar cambios de la forma más rápida y adoptar nuevas herramientas para resolver nuevos problemas sin que el stack tecnológico limite esos cambios \cite{ibmmicroservicios}.
+}
+\subsubsection{Escalamiento preciso}
+\paragraph{
+    Los microservicios permiten además de implemetar los servicios de forma individual, escalar estos servicios individualmetne. Por lo tanto microservicios requieren menos infraestructura que las aplicaciones monolíticas porque permiten escalar con precisión solo los componentes que lo requieren, en lugar de toda la aplicación en el caso de las aplicaciones monolíticas. Este punto es quizas uno de los más importantes en cuanto a su aplicacion en Big Data.
+}
+\subsubsection{Ubicación estratégica}
+\paragraph{
+    Los microservicios pueden ser ubicados en distintos lugares ya sea por motivos físicos o técnicos, de acuerdo a las necesidades planteadas. Un ejemplo de motivos físicos sería que la fuente de datos que debe consumir el microservicio se encuentre en un lugar lejano, en este caso es preferible que el microservicio que la utilice este cerca de la fuente. Estando cerca de la fuente el microservicio no solo puede acceder a los datos de manera más rápida, sino que al retornar datos resumidos podría acelerar el procesamiento de un sistema con un componente central que utilice los datos retornados (ejemplos IoT, edge). En cuanto a los motivos técnicos para la ubicación de los microservicios se puede indicar que el hecho de que puedan ser implementados por distintas tecnologías, permite que se puedan implementar para dispositivos de bajos recursos como pueden ser los dispositivos edge.
+}
 
 
-Container technology offers a more lightweight method to
-abstract the applications from the system environment which
-allows the microservices to be deployed quickly but also
-consistently. Compared to VMs, containers not only provide
-all the libraries and other dependencies but also consume less
-resource and produce lower overhead
+\subsection{Desafíos}
+Existen además algunos desafíos como cite{ibmmicroservicios}
+\begin{itemize}
+    \item Manejo de contenedores.
+    \item Puertos de enlace a las API.
+    \item Mensajería y transmisión de eventos.
+    \item Serverless.
+\end{itemize}
+
+\subsubsection{Manejo de contenedores}
+\paragraph{
+    Cuando Docker marcó el comienzo de la era de los contenedores modernos en 2013, también introdujo el modelo informático que se asociaría más estrechamente con los microservicios. Debido a que los contenedores individuales no tienen la sobrecarga de su propio sistema operativo, son más pequeños y livianos que las máquinas virtuales tradicionales. Al ser livianos pueden escalar rápidamente, combinando perfectamente con los servicios que se encuentran dentro de las arquitecturas de microservicios.
+    Con la proliferación de servicios y contenedores, orquestar y administrar grandes grupos de contenedores se convirtió en uno de los desafíos críticos. Kubernetes, una plataforma de orquestación de contenedores de código abierto, se ha convertido en una de las soluciones de orquestación más populares debido a que es un sistema funcionalmente correcto y robusto.cite{ibmmicroservicios}
+}
+
+\subsubsection{Puertos de enlace a las API}
+\paragraph{
+    Los microservicios a menudo se comunican a través de API, especialmente cuando se establece el estado por primera vez. Si bien es cierto que los clientes y los servicios pueden comunicarse entre sí directamente, cuando la cantidad de servicios en una aplicación crece con el tiempo las puertas de enlace API comiezan a ser necesarias. Una puerta de enlace API actúa como un proxy inverso ruteando solicitudes de los clientes, distribuyendo las solicitudes en múltiples servicios, proporcionando seguridad y autenticación.
+    Existen varias tecnologías para implementar puertas de enlace de API. Si la arquitectura de microservicios se implementa con contenedores y Kubernetes, generalmente se utiliza Ingress o ultiemamente Istio.
+    cite{ibmmicroservicios}
+}
+
+\subsubsection{Mensajería y transmisión de eventos}
+\paragraph{
+    En ciertos casos hay sistemas que necesitan manejar estados, por lo que es necesario propagar los cambios de estado entre los diferentes componentes del sistema. Aunque es comun que el llamado a una API define el estado inicial de un servicio, no es una forma efectiva de mantener el servicio actualizado. Hacer pooling sobre ju servicio en particular para estar al tanto de los cambios no es práctico. Es necesario acoplar las llamadas API de establecimiento de estado con mensajería o transmisión de eventos para que los servicios puedan propagar los cambios de estado. Probablemente lo mejor sería utilizar intermediario de mensajes de propósito general, una plataforma de transmisión de eventos como Apache Kafka \cite{BibEntry2022Apr}, podría ser una buena opción. Al combinar microservicios con arquitectura basada en eventos, los desarrolladores pueden crear sistemas distribuidos, altamente escalables, tolerantes a fallas y extensibles que pueden consumir y procesar grandes cantidades de eventos o información en tiempo real cite{ibmmicroservicios}.
+}
+
+\subsubsection{Serverless}
+\paragraph{
+    En el caso de las arquitecturas serverless, la unidad de ejecución no es solo un pequeño servicio, sino una función. La línea que separa una función serverless de un microservicio es borrosa, pero comúnmente se entiende que las funciones son incluso más pequeñas que un microservicio.
+    Las arquitecturas serverless y las plataformas de funciones como servicio (FaaS function as a service) comparten afinidad con los microservicios, ya que ambas crean unidades de implementación más pequeñas y escalan con la demanda de manera precisa\cite{ibmmicroservicios}.
+}
+
+
+\subsection{Big Data}
+
+En cuanto a la aplicación de microservicios a big data
+Las aplicaciones monolíticas tradicionales simplemente no ofrecen la flexibilidad que ofrecen las aplicaciones basadas en microservicios. Una aplicación que se ejecuta en microservicios tiene cada componente de soporte que se ejecuta en diferentes servidores, que se pueden escalar hacia arriba o hacia abajo cuando sea necesario. Los sistemas Big Data tienden a procesar una gran cantidad de datos a una velocidad superior a la que pueden manejar las aplicaciones que se ejecutan en marcos monolíticos.
+Consistencia de datos I\& Calidad
+dockerSwarmWhatisQu51:en línea
+Big Data aumenta la velocidad y el volumen de datos que se procesan al mismo tiempo en un servidor. También aumenta la variedad y la veracidad de los datos inciertos. A medida que aumenta el volumen de datos, es importante vigilar la calidad de los datos. Por ejemplo, un error de datos en el intercambio Nasdaq causó caos recientemente, ya que la introducción de datos de prueba en los sistemas en vivo afectó enormemente los precios de las acciones de varias empresas tecnológicas. Dos ejemplos notables: los precios de Amazon se desplomaron un 87 %, mientras que Zynga se recuperó un sorprendente 3292 %. En este caso, el error puede vincularse directamente a la calidad de los datos.
+
+Las aplicaciones basadas en microservicios son más fáciles de mantener, probar y escalar que las aplicaciones monolíticas.
+
+Facilidad de modificación de código
+
+Los marcos de microservicios permiten que diferentes empleados que se especializan en varios lenguajes de codificación modifiquen el código. Esto agregará beneficios directos a su organización, principalmente la diversificación y el fortalecimiento de su grupo de talentos.
 
 
 
 
-
-
-
-Microservicios vs SOA (serviceoriented architecture)
-The differences between microservices and SOA can be a bit less clear. While technical contrasts can be drawn between microservices and SOA, especially around the role of the enterprise service bus (ESB), it’s easier to consider the difference as one of scope. SOA was an enterprise-wide effort to standardize the way all web services in an organization talk to and integrate with each other, whereas microservices architecture is application-specific.
-
-https://www.ibm.com/cloud/blog/soa-vs-microservices
-
-
+\cite{Mauersberger2022Apr}
 ****
 
 de https://www.leanix.net/en/blog/benefits-of-using-microservices-with-big-data-applications
@@ -76,8 +106,9 @@ de https://www.leanix.net/en/blog/benefits-of-using-microservices-with-big-data-
 Application Scalability
 
 Traditional monolithic applications simply do not offer the flexibility that applications built on microservices do. An application running on microservices have each supporting component running on different servers, which can be scaled up or down whenever needed. Big Data systems tend to process a lot of data at a higher speed than applications ran on monolithic frameworks can handle.
-Data Consistency I\& Quality
 
+Data Consistency I\& Quality
+dockerSwarmWhatisQu51:online
 Big Data increases the velocity and volume of data being processed at one time on a server. It also increases the variety and veracity of uncertain data. As data volume increases, it is important to keep an eye on the data quality. For example, A data error on the Nasdaq exchange caused chaos recently, as the introduction of test data into the live systems vastly impacted the shares prices of a number of tech companies. Two notable examples: Amazon prices crashed by 87%, while Zynga bounced up by an amazing 3,292%. In this case, the error can be linked directly to data quality.
 
 Applications built on microservices are easier to maintain, test, and scale than monolithic applications.
