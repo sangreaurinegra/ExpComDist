@@ -1,43 +1,42 @@
-\paragraph{
+\subsection{
     \textbf{\emph{The Survival Analysis of Big Data Application
             Over Auto-scaling Cloud Environment}
     }
     \cite[pág. 155]{somani_emerging_2019}.
 }
 
-\paragraph{
-    La carga de los centros de datos que le dan soporte a la nube fluctúa en el tiempo.
-    Para escalar se asignan recursos como memoria y cpu´s.
-    Los autores destacan que el auto escalamiento es uno de los atributos esencial en la arquitectura de la nube, asignado o quitando automáticamente recursos informáticos dependiendo de la carga.
-    La arquitectura en la nube es apropiada para las aplicaciones Big Data al estar asociadas a grandes volúmenes de datos y alto consumo de procesamiento.
-    El presente artículo se planteó estimar la probabilidad de supervivencia
-    en un entorno de una nube con escalamiento automático en el contexto de Big Data.
-}
-\paragraph{
-    Los conceptos de Cloud Computing, Big data y auto escalamiento horizontal y vertical en un entorno Cloud fueron brevemente desarrollados en el artículo.
-}
-\paragraph{
-    Las arquitecturas de escalado automático presentadas fueron la arquitectura que utiliza DNS para hacer un roud robin sobre balanceadores que ejecutan sobre arreglos de servicios y la arquitectura para auto escalar utilizada por AWS.
-}
+La carga de los centros de datos que le dan soporte a la nube fluctúa en el tiempo.
+Para escalar se asignan recursos como memoria y cpu´s.
+Los autores destacan que el auto escalamiento es uno de los atributos esencial en la arquitectura de la nube, asignado o quitando automáticamente recursos informáticos dependiendo de la carga.
+La arquitectura en la nube es apropiada para las aplicaciones Big Data al estar asociadas a grandes volúmenes de datos y alto consumo de procesamiento.
+El presente artículo se planteó estimar la probabilidad de supervivencia
+en un entorno de una nube con escalamiento automático en el contexto de Big Data.
+\par
 
-\paragraph{
-    Los autores categorizaron la carga de trabajo
-    haciendo referencia a Lorido-Botran es descrito el término de carga de trabajo,
-    como la secuencia de peticiones de usuario marcadas con el tiempo de llegada. Y agregando otras características según Abawajy como ser tasa de llegada, tiempo de ejecución, uso de memoria, operaciones de entrada de salida, comunicación y cantidad de procesos (VMs) requeridos. La carga de trabajo en estática
-    es la carga de trabajo que es asignada una vez. La carga de trabajo dinámica es la asignada en todo el proceso de ejecución.
-    Además basándose en la plataforma donde se ejecuta la carga se categorizaron dos grupos más de carga de trabajo, como ser los centrados en los servidores (websites, computación científica, aplicaciones empresariales entre otras) y los que están centrados en el cliente (computación gráfica, aplicaciones móviles, procesadores de texto entre otras).
-}
+Los conceptos de Cloud Computing, Big data y auto escalamiento horizontal y vertical en un entorno Cloud fueron brevemente desarrollados en el artículo.
+\par
 
-\paragraph{
-    El artículo  se basó en la definición de confiabilidad de un sistema según el IEEE apicada a la confiabilidad de un sistema en la nube. La definición de confiabilidad de un sistema según el IEEE describe la ingeniería confiable como una disciplina de la ingeniería de diseño que implementa la experiencia científica, para asegurar que el sistema proporcionará la función asignada en la duración requerida en un entorno dado. Incluyendo además la capacidad de testear y dar respaldo al sistema durante todo el ciclo de vida. Se agregó que para el software la confiabilidad se representa como la probabilidad de que una operación este libre de fallas para u periodo de tiempo particular y en una situación especifica.
-    DE esta manera introdujeron el concepto de probabilidad de supervivencia como la probabilidad de que el sistema no falle en el intervalo (0,t]  como implementación en la nube. Al ser demandado el sistema en la nueva todo el tiempo se describe la probabilidad de que el componente i sobreviva como Ri(t) en el tiempo t.
-}
+Las arquitecturas de escalado automático presentadas fueron la arquitectura que utiliza DNS para hacer un roud robin sobre balanceadores que ejecutan sobre arreglos de servicios y la arquitectura para auto escalar utilizada por AWS.
+\par
 
-\paragraph{
-    Como modelo analítico se utilizó la distribución exponencial en su caso particular de las familias de distribuciones Weibul, indicando que es la distribución más utilizada para el análisis de fiabilidad y supervivencia. En el estudio de los procesos estocásticos continuos la distribución exponencial se utiliza para modelar cunado algo sucede durante el proceso. En este caso el suceso que se estudia es una falla en el sistema pudiendo deberse esta a cualquier falla de cualquier componente del mismo ya sean máquinas virtuales, almacenamiento de datos, kernel, hypervisor entre otros.
-    Se desarrolló un programa en Scilab 6 para generar datos que fueron útiles para la investigación del modelo, asumiendo que la probabilidad de falla es la misma para todo componente del sistema.
-}
 
-\paragraph{
-    La conclusion fue que a partir del analisis de las ecuaciones de Birnbaum’s para cada componente y las ecuaciones de probabilidad de fallas que la probabilidad de falla de un recurso de la nube aumenta cuando la probabilidad de supervivencia del sistema en la nube decrece. Cuando el tiempo del sistema aumento la probabilidad de supervivencia del sistema en la nube disminuye. A mayor número de unidades de escalamiento mayor probabilidad de supervivencia. Los cambios siguen el patrón decreciente de una  distribución exponencial. Al au mentar la cantidad de fallas de los recursos de la nube también aumenta la cantidad de fallas del sistema. Al aumentar la cantidad de unidades de escalamiento disminuye la cantidad de fallas. Cuanto más demore el sistema en procesar, más serán las fallas del sistema en un entorno cloud. Los cambios siguen un patrón creciente de la función exponencial. Cuando la cantidad de fallas del cloud aumenta, el tiempo medio para fallar disminuye. A más unidades de escalamiento mayor es el tiempo medio para fallar. El patrón de los cambios del tiempo medio para fallar es exponencial dividido en dos secciones, la primera desciende rápidamente y la segunda decrece lentamente. Los componentes paralelos son las confiables que las series basadas en las medidas de Birnbaum.
-}
+Los autores categorizaron la carga de trabajo
+haciendo referencia a Lorido-Botran es descrito el término de carga de trabajo,
+como la secuencia de peticiones de usuario marcadas con el tiempo de llegada. Y agregando otras características según Abawajy como ser tasa de llegada, tiempo de ejecución, uso de memoria, operaciones de entrada de salida, comunicación y cantidad de procesos (VMs) requeridos. La carga de trabajo en estática
+es la carga de trabajo que es asignada una vez. La carga de trabajo dinámica es la asignada en todo el proceso de ejecución.
+Además basándose en la plataforma donde se ejecuta la carga se categorizaron dos grupos más de carga de trabajo, como ser los centrados en los servidores (websites, computación científica, aplicaciones empresariales entre otras) y los que están centrados en el cliente (computación gráfica, aplicaciones móviles, procesadores de texto entre otras).
+\par
+
+
+El artículo  se basó en la definición de confiabilidad de un sistema según el IEEE apicada a la confiabilidad de un sistema en la nube. La definición de confiabilidad de un sistema según el IEEE describe la ingeniería confiable como una disciplina de la ingeniería de diseño que implementa la experiencia científica, para asegurar que el sistema proporcionará la función asignada en la duración requerida en un entorno dado. Incluyendo además la capacidad de testear y dar respaldo al sistema durante todo el ciclo de vida. Se agregó que para el software la confiabilidad se representa como la probabilidad de que una operación este libre de fallas para u periodo de tiempo particular y en una situación especifica.
+DE esta manera introdujeron el concepto de probabilidad de supervivencia como la probabilidad de que el sistema no falle en el intervalo (0,t]  como implementación en la nube. Al ser demandado el sistema en la nueva todo el tiempo se describe la probabilidad de que el componente i sobreviva como Ri(t) en el tiempo t.
+\par
+
+
+Como modelo analítico se utilizó la distribución exponencial en su caso particular de las familias de distribuciones Weibul, indicando que es la distribución más utilizada para el análisis de fiabilidad y supervivencia. En el estudio de los procesos estocásticos continuos la distribución exponencial se utiliza para modelar cunado algo sucede durante el proceso. En este caso el suceso que se estudia es una falla en el sistema pudiendo deberse esta a cualquier falla de cualquier componente del mismo ya sean máquinas virtuales, almacenamiento de datos, kernel, hypervisor entre otros.
+Se desarrolló un programa en Scilab 6 para generar datos que fueron útiles para la investigación del modelo, asumiendo que la probabilidad de falla es la misma para todo componente del sistema.
+\par
+
+
+La conclusion fue que a partir del analisis de las ecuaciones de Birnbaum’s para cada componente y las ecuaciones de probabilidad de fallas que la probabilidad de falla de un recurso de la nube aumenta cuando la probabilidad de supervivencia del sistema en la nube decrece. Cuando el tiempo del sistema aumento la probabilidad de supervivencia del sistema en la nube disminuye. A mayor número de unidades de escalamiento mayor probabilidad de supervivencia. Los cambios siguen el patrón decreciente de una  distribución exponencial. Al au mentar la cantidad de fallas de los recursos de la nube también aumenta la cantidad de fallas del sistema. Al aumentar la cantidad de unidades de escalamiento disminuye la cantidad de fallas. Cuanto más demore el sistema en procesar, más serán las fallas del sistema en un entorno cloud. Los cambios siguen un patrón creciente de la función exponencial. Cuando la cantidad de fallas del cloud aumenta, el tiempo medio para fallar disminuye. A más unidades de escalamiento mayor es el tiempo medio para fallar. El patrón de los cambios del tiempo medio para fallar es exponencial dividido en dos secciones, la primera desciende rápidamente y la segunda decrece lentamente. Los componentes paralelos son las confiables que las series basadas en las medidas de Birnbaum.
+\par
