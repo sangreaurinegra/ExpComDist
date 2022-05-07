@@ -12,3 +12,4 @@
 {"rule":"ESPACIO_DESPUES_DE_PUNTO","sentence":"^\\Qcs.DC\\E$"}
 {"rule":"ES_QUESTION_MARK","sentence":"^\\QWhat is Quarkus?\\E$"}
 {"rule":"AGREEMENT_POSTPONED_ADJ","sentence":"^\\QLos autores utilizaron para su investigación contenedores docker.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qse ha vuelto la plataforma por defecto para distribuir aplicaciones que involucren contenedores.\\E$"}
