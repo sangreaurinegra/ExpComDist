@@ -29,7 +29,7 @@ Los beneficios principales de los microservicios son,
 \subsubsection{Independencia de despliegue}
 \paragraph{
     Quizás la característica más importante de los microservicios es que debido a que los servicios son más pequeños y se pueden implementar de forma independiente, es posible realizar cambios en ellos, que mediante estrategias no afectarían al resto del sistema. Esto permite realizar cambios de manera más ágil sin la necesidad de dedicar tanto a impactar cambios en un sistema monolítico.
-    Y citando a cite{ibmmicroservicios}, el bajo acoplamiento de los microservicios también crea un grado de aislamiento de fallas y una mejor resiliencia en las aplicaciones. Y el pequeño tamaño de los servicios, combinado con sus límites claros y patrones de comunicación, facilita que los nuevos miembros del equipo comprendan el código base y contribuyan rápidamente, un claro beneficio en términos de velocidad y moral de los desarrolladores.
+    Y citando a \cite{ibmmicroservicios}, el bajo acoplamiento de los microservicios también crea un grado de aislamiento de fallas y una mejor resiliencia en las aplicaciones. Y el pequeño tamaño de los servicios, combinado con sus límites claros y patrones de comunicación, facilita que los nuevos miembros del equipo comprendan el código base y contribuyan rápidamente, un claro beneficio en términos de velocidad y moral de los desarrolladores.
 }
 
 \subsubsection{Herramienta adecuada para la solución}
@@ -48,7 +48,7 @@ Los beneficios principales de los microservicios son,
 
 
 \subsection{Desafíos}
-Existen además algunos desafíos como cite{ibmmicroservicios}
+Existen además algunos desafíos como \cite{ibmmicroservicios}
 \begin{itemize}
     \item Manejo de contenedores.
     \item Puertos de enlace a las API.
@@ -59,19 +59,19 @@ Existen además algunos desafíos como cite{ibmmicroservicios}
 \subsubsection{Manejo de contenedores}
 \paragraph{
     Cuando Docker marcó el comienzo de la era de los contenedores modernos en 2013, también introdujo el modelo informático que se asociaría más estrechamente con los microservicios. Debido a que los contenedores individuales no tienen la sobrecarga de su propio sistema operativo, son más pequeños y livianos que las máquinas virtuales tradicionales. Al ser livianos pueden escalar rápidamente, combinando perfectamente con los servicios que se encuentran dentro de las arquitecturas de microservicios.
-    Con la proliferación de servicios y contenedores, orquestar y administrar grandes grupos de contenedores se convirtió en uno de los desafíos críticos. Kubernetes, una plataforma de orquestación de contenedores de código abierto, se ha convertido en una de las soluciones de orquestación más populares debido a que es un sistema funcionalmente correcto y robusto.cite{ibmmicroservicios}
+    Con la proliferación de servicios y contenedores, orquestar y administrar grandes grupos de contenedores se convirtió en uno de los desafíos críticos. Kubernetes, una plataforma de orquestación de contenedores de código abierto, se ha convertido en una de las soluciones de orquestación más populares debido a que es un sistema funcionalmente correcto y robusto \cite{ibmmicroservicios}.
 }
 
 \subsubsection{Puertos de enlace a las API}
 \paragraph{
     Los microservicios a menudo se comunican a través de API, especialmente cuando se establece el estado por primera vez. Si bien es cierto que los clientes y los servicios pueden comunicarse entre sí directamente, cuando la cantidad de servicios en una aplicación crece con el tiempo las puertas de enlace API comiezan a ser necesarias. Una puerta de enlace API actúa como un proxy inverso ruteando solicitudes de los clientes, distribuyendo las solicitudes en múltiples servicios, proporcionando seguridad y autenticación.
-    Existen varias tecnologías para implementar puertas de enlace de API. Si la arquitectura de microservicios se implementa con contenedores y Kubernetes, generalmente se utiliza Ingress o ultiemamente Istio.
-    cite{ibmmicroservicios}
+    Existen varias tecnologías para implementar puertas de enlace de API. Si la arquitectura de microservicios se implementa con contenedores y Kubernetes, generalmente se utiliza Ingress o ultiemamente Istio 
+    \cite{ibmmicroservicios}.
 }
 
 \subsubsection{Mensajería y transmisión de eventos}
 \paragraph{
-    En ciertos casos hay sistemas que necesitan manejar estados, por lo que es necesario propagar los cambios de estado entre los diferentes componentes del sistema. Aunque es comun que el llamado a una API define el estado inicial de un servicio, no es una forma efectiva de mantener el servicio actualizado. Hacer pooling sobre ju servicio en particular para estar al tanto de los cambios no es práctico. Es necesario acoplar las llamadas API de establecimiento de estado con mensajería o transmisión de eventos para que los servicios puedan propagar los cambios de estado. Probablemente lo mejor sería utilizar intermediario de mensajes de propósito general, una plataforma de transmisión de eventos como Apache Kafka \cite{BibEntry2022Apr}, podría ser una buena opción. Al combinar microservicios con arquitectura basada en eventos, los desarrolladores pueden crear sistemas distribuidos, altamente escalables, tolerantes a fallas y extensibles que pueden consumir y procesar grandes cantidades de eventos o información en tiempo real cite{ibmmicroservicios}.
+    En ciertos casos hay sistemas que necesitan manejar estados, por lo que es necesario propagar los cambios de estado entre los diferentes componentes del sistema. Aunque es comun que el llamado a una API define el estado inicial de un servicio, no es una forma efectiva de mantener el servicio actualizado. Hacer pooling sobre ju servicio en particular para estar al tanto de los cambios no es práctico. Es necesario acoplar las llamadas API de establecimiento de estado con mensajería o transmisión de eventos para que los servicios puedan propagar los cambios de estado. Probablemente lo mejor sería utilizar intermediario de mensajes de propósito general, una plataforma de transmisión de eventos como Apache Kafka \cite{BibEntry2022Apr} o Nats \cite{nats} \cite{micronats}, podría ser una buena opción. Al combinar microservicios con arquitectura basada en eventos, los desarrolladores pueden crear sistemas distribuidos, altamente escalables, tolerantes a fallas y extensibles que pueden consumir y procesar grandes cantidades de eventos o información en tiempo real \cite{ibmmicroservicios}.
 }
 
 \subsubsection{Serverless}
@@ -85,9 +85,7 @@ Existen además algunos desafíos como cite{ibmmicroservicios}
 
 En cuanto a la aplicación de microservicios a big data
 Las aplicaciones monolíticas tradicionales simplemente no ofrecen la flexibilidad que ofrecen las aplicaciones basadas en microservicios. Una aplicación que se ejecuta en microservicios tiene cada componente de soporte que se ejecuta en diferentes servidores, que se pueden escalar hacia arriba o hacia abajo cuando sea necesario. Los sistemas Big Data tienden a procesar una gran cantidad de datos a una velocidad superior a la que pueden manejar las aplicaciones que se ejecutan en marcos monolíticos.
-Consistencia de datos I\& Calidad
-dockerSwarmWhatisQu51:en línea
-Big Data aumenta la velocidad y el volumen de datos que se procesan al mismo tiempo en un servidor. También aumenta la variedad y la veracidad de los datos inciertos. A medida que aumenta el volumen de datos, es importante vigilar la calidad de los datos. Por ejemplo, un error de datos en el intercambio Nasdaq causó caos recientemente, ya que la introducción de datos de prueba en los sistemas en vivo afectó enormemente los precios de las acciones de varias empresas tecnológicas. Dos ejemplos notables: los precios de Amazon se desplomaron un 87 %, mientras que Zynga se recuperó un sorprendente 3292 %. En este caso, el error puede vincularse directamente a la calidad de los datos.
+Big Data aumenta la velocidad y el volumen de datos que se procesan al mismo tiempo en un servidor. También aumenta la variedad y la veracidad de los datos inciertos. A medida que aumenta el volumen de datos, es importante vigilar la calidad de los datos. Por ejemplo, un error de datos en el intercambio Nasdaq causó caos recientemente, ya que la introducción de datos de prueba en los sistemas en vivo afectó enormemente los precios de las acciones de varias empresas tecnológicas. Dos ejemplos notables: los precios de Amazon se desplomaron un 87 \%, mientras que Zynga se recuperó un sorprendente 3292 \%. En este caso, el error puede vincularse directamente a la calidad de los datos.
 
 Las aplicaciones basadas en microservicios son más fáciles de mantener, probar y escalar que las aplicaciones monolíticas.
 
@@ -96,7 +94,7 @@ Facilidad de modificación de código
 Los marcos de microservicios permiten que diferentes empleados que se especializan en varios lenguajes de codificación modifiquen el código. Esto agregará beneficios directos a su organización, principalmente la diversificación y el fortalecimiento de su grupo de talentos.
 
 
-
+%%TODO 
 
 \cite{Mauersberger2022Apr}
 ****

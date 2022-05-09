@@ -1,0 +1,105 @@
+\subsection{Patrones}
+Existen una serie de patrones arquitectónicos en el ecosistema de microservicios.
+Muchos de esos patrones son esenciales a la hora de diseñar una arquitectura de microservicios porque serán las herramientas
+necesarias para desarrollar un sistema robusto, escalable, mantenible, monitoreable sin morir en el intento.
+En esta sección se realizará una pequeña reseña sobre cada uno de los patrones, agrupados por tipo.\par
+A partir de la agrupación se definen las Api's de servicios en donde estarían involucrados el servicio, las operaciones y los demás servicios que colaboraran con el servicio definido.\par
+Se tomó como referencia el libro “Microservices Patterns With examples in Java by Chris Richardson“\cite{micropatterns}. Los patrones se presentan en inglés debido a que por lo general se hace referencia a ellos en inglés.\par
+
+\subsubsection{Decomposition patterns} 
+Los patrones de descomposición permiten abordar el problema de descomponer la aplicación en servicios. Son los patrones más importantes porque nos permiten definir la arquitectura, la cual tendrá un impacto en todo lo concerniente a la aplicación desde su mantenibilidad testeo y distribución.
+La idea de este patrón es descomponer por unidades de negocios, definiendo pequeños subconjuntos cohesivos de funcionalidades. De esta manera se conforman los servicios que además deben de cumplir con una serie de requisitos para ser tales. Uno de esos requisitos es cumplir con el principio de "Common Clujure", el cual indica que lo que cambia en conjunto debe de estar empaquetado en conjunto, es uno de los puntos que permite realizar despliegues sin afectar al resto del sistema. El servicio debe tener bajo acoplamiento, el despliegue de nuevas versiones no debe afectar a los clientes \cite{microDescompose}.\par
+Hay una serie de  desventajas de descomponer una aplicación en servicios. Entre algunas de esas desventajas se encuentran la latencia de red, mantener la consistencia de datos a través de los servicios, el poder obtener una vista consistente de los datos, las unidades de software de gran tamaño y altamente acopladas y la reducción de la disponibilidad de la comunicación sincrónica.\par 
+
+\paragraph{Decompose by business capability}
+El patrón "Decompose by business capability" como solución plantea definir servicios en unidades de negocio. Este concepto pertenece al modelado de arquitectura a través de negocio. 
+Las unidades de negocio corresponden a objetos de negocio que generan valor, pueden ser organizadas jerárquicamente.\par
+Por ejemplo:
+Unidades de negocio 
+\begin{itemize}
+    \item Catálogo de productos.
+    \item Inventario.
+    \item Delivery.
+\end{itemize}
+Se corresponden con:
+\begin{itemize}
+    \item Servicio de Catálogo de productos.
+    \item Servicio de Inventario.
+    \item Servicio de Delivery.
+\end{itemize}
+Los posibles problemas de este enfoque es que para desarrollar el sistema son que hay que conocer el negocio de tal manera de poder identificar las unidades de negocio y que la arquitectura será estable en la medida que las unidades de negocio y sus interacciones sean estables. El aplicar esta forma de arquitectura es un riesgo en negocios que no han llegado a la suficiente madures en cuanto a su estructura, además de los cambios que implicaría frente a una reorganización de la empresa por crecimiento o cambio de mandos.\par
+
+\paragraph{Decompose by subdomain}
+Define servicios a través de "Domain-Driven Design" (DDD), en el cual en el problema que aborda la aplicación el negocio en el dominio y está compuesto por multiples subdominios. Un libro recomendado para abordar DDD es Domain-driven design by Eric Evans (Addison-Wesley Professional, 2003).\par
+
+Los subdominios pueden ser catalogados core, soporte y genéricos. Donde en core se encuentra lo principal del negocio lo que le aporta más valor. Por ejemplo una empresa cobranzas se puede quedar sin servicio en su sitio web institucional pero no en el sistema de cobranzas. Soporte es lo relacionado con el negocio, pero que no es un diferenciador en sí mismo y se puede tercerizar, a modo de ejemplo puede ser soporte a usuarios, soporte técnico interno. Lo genérico refiere a lo que no es específico del negocio y uqe es ideal implementarlo con software comercial.\par
+
+\subsubsection{Messaging style patterns}
+
+\paragraph{Messaging} (85)
+\paragraph{Remote procedure invocation} (72)
+
+\subsubsection{Reliable communications patterns}
+\paragraph{Circuit breaker} (78)
+\paragraph{Service discovery patterns}
+\paragraph{3rd party registration} (85)
+\paragraph{Client-side discovery} (83)
+\paragraph{Self-registration} (82)
+\paragraph{Server-side discovery} (85)
+
+\subsubsection{Transactional messaging patterns}
+\paragraph{Polling publisher} (98)
+\paragraph{Transaction log tailing} (99)
+\paragraph{Transactional outbox} (98)
+
+\subsubsection{Data consistency patterns}
+\paragraph{Saga} (114)
+
+\subsubsection{Business logic design patterns}
+\paragraph{Aggregate} (150)
+\paragraph{Domain event} (160)
+\paragraph{Domain model} (150)
+\paragraph{Event sourcing} (184)
+\paragraph{Transaction script} (149)
+
+\subsubsection{Querying patterns}
+\paragraph{API composition} (223)
+
+\paragraph{Command query responsibility segregation}
+(228)
+
+\subsubsection{External API patterns}
+\paragraph{API gateway} (259)
+\paragraph{Backends for frontends} (265)
+
+\subsubsection{Testing patterns}
+\paragraph{Consumer-driven contract test} (302)
+\paragraph{Consumer-side contract test} (303)
+\paragraph{Service component test} (335)
+
+\subsubsection{Security patterns}
+\paragraph{Access token} (354)
+
+\subsubsection{Cross-cutting concerns patterns}
+\paragraph{Externalized configuration} (361)
+\paragraph{Microservice chassis} (379)
+
+\subsubsection{Observability patterns}
+\paragraph{Application metrics} (373)
+\paragraph{Audit logging} (377)
+\paragraph{Distributed tracing} (370)
+\paragraph{Exception tracking} (376)
+\paragraph{Health check API} (366)
+\paragraph{Log aggregation} (368)
+
+\subsubsection{Deployment patterns}
+\paragraph{Deploy a service as a container} (393)
+\paragraph{Deploy a service as a VM} (390)
+\paragraph{Language-specific packaging format} (387)
+\paragraph{Service mesh} (380)
+\paragraph{Serverless deployment} (416)
+\paragraph{Sidecar} (410)
+
+\subsubsection{Refactoring to microservices patterns}
+\paragraph{Anti-corruption layer} (447)
+\paragraph{Strangler application} (432)
