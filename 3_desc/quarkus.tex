@@ -1,0 +1,40 @@
+\subsection{Quarkus}
+
+
+https://quarkus.io/about/   //TODO  Arrancar por el about
+
+
+Esta sección esta basada principalmente en el libro Quarkus Cookbook \cite{bueno_quarkus_nodate}.\par
+
+Integración de Quarkus con Kubernetes
+
+\paragraph{Kubernetes} se ha vuelto la plataforma por defecto para distribuir aplicaciones que involucren contenedores.
+Dado que una de las formas más utilizadas y convenientes de implementar microservicios es utilizando contenedores, Quarkus ofrece una serie de extensiones para desarrollar y desplegar aplicaciones en Kubernetes.\par
+Las extensiones incluyen tareas como:
+\begin{itemize}
+  \item Construir y pushear imágenes de contenedores.
+  \item Generar recursos de Kubernetes.
+  \item Despliegue de servicios Quarkus.
+  \item Desarrollar operadores Kubernetes.
+  \item Despliegue de servicios en Knative.
+\end{itemize}
+
+\paragraph{Construir y pushear imagenes de contenedores.}
+La unidad en Kubernetes es el pod. El pod está compuesto por contenedores que se encuentran en el mismo host y comparten recursos como ip y puertos. Quarkus soporta una serie de estrategias para construir contenedores. Una de ellas es la básica, utilizando una instalación local de  docker para construir la imagen. Otra estrategia es a través de Jib, esta estrategia no utiliza el demonio de docker para construir la imagen del contenedor, es ideal para utilizar cuando se está trabajando dentro de un contenedor, para evitar hacer docker-in-docker. Al utilizar Jib integrado con Quarkus se logra construir las imágenes de manera rápida, dado que se cachean las diferentes dependencias de la aplicación haciendo que las reconstrucciones sean más rápidas y pequeñas. Para eso utiliza un sistema de capas similar al de docker para no reconstruir lo que no sufrió cambios. También soporta S2I Source to image para hacer más performante la construcción de contenedores en Open Shift. Como no se utilizará Open Shift no se ahonda en este tema.\par
+
+\paragraph{Generar recursos de Kubernetes.}
+
+Quarkus cuenta con una extension que permite generar automáticamente el archivo de recursos de Kubernetes con valores por defecto. Esta extension soporta Kubernetes y Open Shift.
+\par
+Los valores con los que genera el archivo pueden ser indicados en las propiedades de la aplicación que se está desarrollando ubicados en el archivo aplicación.properties.
+
+\paragraph{Despliegue de servicios Quarkus.}
+
+
+\paragraph{Desarrollar operadores Kubernetes.}
+
+
+\paragraph{Despliegue de servicios en Knative.}
+
+
+
